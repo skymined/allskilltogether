@@ -1,0 +1,263 @@
+#!/usr/bin/env node
+// Scans the repos listed in data/sources.json for skill-definition files
+// (SKILL.md and friends), parses their frontmatter, categorizes them, and
+// writes the combined result to data/skills.json.
+//
+// Usage: node scripts/fetch-skills.mjs
+// Auth:  set GITHUB_TOKEN (or GH_TOKEN) to raise the GitHub API rate limit.
+//        In GitHub Actions the built-in GITHUB_TOKEN is used automatically.
+
+import { readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
+const DATA_DIR = path.join(ROOT, "data");
+
+const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
+const API = "https://api.github.com";
+
+function headers(extra = {}) {
+  const h = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "allskilltogether-skill-crawler",
+    ...extra,
+  };
+  if (TOKEN) h.Authorization = `Bearer ${TOKEN}`;
+  return h;
+}
+
+async function gh(urlPath, extra) {
+  const url = urlPath.startsWith("http") ? urlPath : `${API}${urlPath}`;
+  const res = await fetch(url, { headers: headers(extra) });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`GitHub API ${res.status} for ${url}: ${body.slice(0, 300)}`);
+  }
+  return res.json();
+}
+
+async function ghRaw(repo, branch, filePath) {
+  const url = `https://raw.githubusercontent.com/${repo}/${branch}/${filePath}`;
+  const res = await fetch(url, { headers: { "User-Agent": "allskilltogether-skill-crawler" } });
+  if (!res.ok) throw new Error(`raw ${res.status} for ${url}`);
+  return res.text();
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+// Very small YAML front-matter reader: only needs top-level `key: value`
+// pairs (name, description, license, ...) from Agent Skill files, which
+// never use nested structures for those fields.
+function parseFrontmatter(md) {
+  const m = md.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!m) return {};
+  const out = {};
+  const lines = m[1].split(/\r?\n/);
+  let curKey = null;
+  for (const line of lines) {
+    const kv = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (kv) {
+      curKey = kv[1];
+      let val = kv[2].trim();
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
+        val = val.slice(1, -1);
+      }
+      out[curKey] = val;
+    } else if (curKey && /^\s+\S/.test(line)) {
+      // continuation of a folded/multi-line value
+      out[curKey] += " " + line.trim();
+    }
+  }
+  return out;
+}
+
+function slugify(s) {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function categorize(rules, overrides, key, name, description) {
+  if (overrides[key]) return overrides[key];
+  const hay = `${name} ${description}`.toLowerCase();
+  let best = null;
+  let bestScore = 0;
+  for (const rule of rules) {
+    let score = 0;
+    for (const kw of rule.keywords) {
+      if (hay.includes(kw)) score++;
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      best = rule.category;
+    }
+  }
+  return best || "other";
+}
+
+async function listTreeFiles(repo, branch) {
+  const data = await gh(`/repos/${repo}/git/trees/${branch}?recursive=1`);
+  if (data.truncated) {
+    console.warn(`  ! warning: tree for ${repo}@${branch} was truncated by the API`);
+  }
+  return (data.tree || []).filter((t) => t.type === "blob");
+}
+
+async function lastCommitDate(repo, branch, filePath) {
+  try {
+    const commits = await gh(
+      `/repos/${repo}/commits?path=${encodeURIComponent(filePath)}&sha=${branch}&per_page=1`
+    );
+    if (Array.isArray(commits) && commits[0]) {
+      return commits[0].commit?.committer?.date || commits[0].commit?.author?.date || null;
+    }
+  } catch (e) {
+    console.warn(`  ! could not get commit date for ${repo}/${filePath}: ${e.message}`);
+  }
+  return null;
+}
+
+async function repoMeta(repo) {
+  try {
+    const data = await gh(`/repos/${repo}`);
+    return { stars: data.stargazers_count ?? null, pushedAt: data.pushed_at ?? null, description: data.description ?? "" };
+  } catch (e) {
+    console.warn(`  ! could not get repo metadata for ${repo}: ${e.message}`);
+    return { stars: null, pushedAt: null, description: "" };
+  }
+}
+
+async function processCollection(source, catRules, overrides) {
+  const { repo, branch = "main", tool, match = ["SKILL.md"], exclude = [] } = source;
+  console.log(`Scanning collection ${repo}@${branch} for ${match.join(", ")} ...`);
+  const files = await listTreeFiles(repo, branch);
+  const hits = files.filter(
+    (f) => match.includes(f.path.split("/").pop()) && !exclude.includes(f.path)
+  );
+  console.log(`  found ${hits.length} match(es)`);
+
+  const meta = await repoMeta(repo);
+  const results = [];
+  for (const hit of hits) {
+    try {
+      const raw = await ghRaw(repo, branch, hit.path);
+      const fm = parseFrontmatter(raw);
+      const name = fm.name || path.basename(path.dirname(hit.path));
+      const description = fm.description || "";
+      const key = `${repo}#${hit.path}`;
+      const category = categorize(catRules, overrides, key, name, description);
+      const updatedAt = (await lastCommitDate(repo, branch, hit.path)) || meta.pushedAt;
+      results.push({
+        id: slugify(`${tool}-${repo}-${hit.path}`),
+        name,
+        description,
+        tool,
+        category,
+        repo,
+        path: hit.path,
+        raw_url: `https://raw.githubusercontent.com/${repo}/${branch}/${hit.path}`,
+        html_url: `https://github.com/${repo}/blob/${branch}/${hit.path}`,
+        repo_url: `https://github.com/${repo}`,
+        stars: meta.stars,
+        updated_at: updatedAt,
+      });
+      await sleep(120);
+    } catch (e) {
+      console.warn(`  ! skipping ${repo}/${hit.path}: ${e.message}`);
+    }
+  }
+  return results;
+}
+
+async function processSingle(source, catRules, overrides) {
+  const { repo, branch = "main", tool, path: filePath, category: forcedCategory } = source;
+  console.log(`Fetching single skill ${repo}/${filePath} ...`);
+  try {
+    const raw = await ghRaw(repo, branch, filePath);
+    const fm = parseFrontmatter(raw);
+    const name = fm.name || source.name || repo.split("/")[1];
+    const description = fm.description || source.description || "";
+    const meta = await repoMeta(repo);
+    const key = `${repo}#${filePath}`;
+    const category = forcedCategory || categorize(catRules, overrides, key, name, description);
+    const updatedAt = (await lastCommitDate(repo, branch, filePath)) || meta.pushedAt;
+    return [
+      {
+        id: slugify(`${tool}-${repo}-${filePath}`),
+        name,
+        description,
+        tool,
+        category,
+        repo,
+        path: filePath,
+        raw_url: `https://raw.githubusercontent.com/${repo}/${branch}/${filePath}`,
+        html_url: `https://github.com/${repo}/blob/${branch}/${filePath}`,
+        repo_url: `https://github.com/${repo}`,
+        stars: meta.stars,
+        updated_at: updatedAt,
+      },
+    ];
+  } catch (e) {
+    console.warn(`  ! skipping single source ${repo}/${filePath}: ${e.message}`);
+    return [];
+  }
+}
+
+async function main() {
+  const sources = JSON.parse(await readFile(path.join(DATA_DIR, "sources.json"), "utf8"));
+  const categories = JSON.parse(await readFile(path.join(DATA_DIR, "categories.json"), "utf8"));
+
+  let existing = { skills: [] };
+  try {
+    existing = JSON.parse(await readFile(path.join(DATA_DIR, "skills.json"), "utf8"));
+  } catch {
+    // first run, no existing file yet
+  }
+
+  const allResults = [];
+  for (const source of sources.repos) {
+    try {
+      if (source.type === "single") {
+        allResults.push(...(await processSingle(source, categories.keyword_rules, categories.overrides)));
+      } else {
+        allResults.push(...(await processCollection(source, categories.keyword_rules, categories.overrides)));
+      }
+    } catch (e) {
+      console.error(`Failed to process source ${source.repo}: ${e.message}`);
+    }
+  }
+
+  // Keep any manually-curated skills that aren't sourced from a scanned repo
+  // (marked with "curated": true) so hand-added entries survive re-runs.
+  const curated = (existing.skills || []).filter((s) => s.curated);
+  const byId = new Map();
+  for (const s of [...curated, ...allResults]) byId.set(s.id, s);
+  const merged = [...byId.values()].sort((a, b) => {
+    const da = a.updated_at ? Date.parse(a.updated_at) : 0;
+    const db = b.updated_at ? Date.parse(b.updated_at) : 0;
+    return db - da;
+  });
+
+  const output = {
+    generated_at: process.env.SKILLS_BUILD_TIME || new Date().toISOString(),
+    categories: categories.list,
+    count: merged.length,
+    skills: merged,
+  };
+
+  await writeFile(path.join(DATA_DIR, "skills.json"), JSON.stringify(output, null, 2) + "\n", "utf8");
+  console.log(`\nWrote ${merged.length} skills to data/skills.json`);
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

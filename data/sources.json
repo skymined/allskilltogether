@@ -1,0 +1,14 @@
+{
+  "_comment": "Repositories to scan for skills. type 'collection' walks the whole repo tree looking for files whose name is in 'match'. type 'single' points at one exact 'path' (for repos that hold just one skill). 'category' on a single entry pre-assigns a category. Add sources here — the next scheduled run (daily) or a manual workflow_dispatch picks them up automatically.",
+  "repos": [
+    {
+      "repo": "anthropics/skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "exclude": ["template/SKILL.md"],
+      "notes": "Official Anthropic example Agent Skills"
+    }
+  ]
+}

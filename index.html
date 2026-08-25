@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Skill Together — Claude &amp; Codex 스킬 모음</title>
+<meta name="description" content="Claude와 Codex의 Agent Skill을 분야별로 모아보고, 원하는 스킬을 골라 바로 조합해보는 사이트입니다." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-mark">🧩</span>
+      <div>
+        <h1>All Skill Together</h1>
+        <p class="tagline">Claude &amp; Codex Agent Skill 아카이브 — 분야별로 찾고, 골라서 조합하기</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span id="last-updated" class="pill pill-muted">불러오는 중…</span>
+      <a class="pill pill-link" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Claude Skills 공식 저장소 ↗</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="controls" aria-label="필터 및 검색">
+    <div class="search-row">
+      <input id="search" type="search" placeholder="스킬 이름, 설명, 저장소로 검색…" aria-label="스킬 검색" />
+      <div class="tool-toggle" role="group" aria-label="도구 필터">
+        <button class="tool-btn active" data-tool="all">전체</button>
+        <button class="tool-btn" data-tool="claude">Claude</button>
+        <button class="tool-btn" data-tool="codex">Codex</button>
+      </div>
+      <select id="sort" aria-label="정렬 기준">
+        <option value="updated">최신 업데이트순</option>
+        <option value="name">이름순</option>
+        <option value="stars">스타순</option>
+      </select>
+    </div>
+    <div id="category-chips" class="chip-row" role="group" aria-label="분야 필터"></div>
+  </section>
+
+  <p id="result-count" class="result-count"></p>
+
+  <section id="board" class="board" aria-live="polite"></section>
+
+  <p id="empty-state" class="empty-state" hidden>조건에 맞는 스킬이 없어요. 검색어나 필터를 조정해보세요.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>매일 자동으로 GitHub Actions가 소스 저장소를 다시 스캔해서 최신 스킬과 업데이트 날짜를 반영합니다.
+      새 저장소를 추가하고 싶다면 <a href="https://github.com/skymined/allskilltogether/blob/main/data/sources.json" target="_blank" rel="noopener">data/sources.json</a>에 PR을 보내주세요.</p>
+  </div>
+</footer>
+
+<!-- Skill detail / combine drawer -->
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-close-drawer></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <button class="drawer-close" data-close-drawer aria-label="닫기">✕</button>
+    <div id="drawer-body"></div>
+  </div>
+</aside>
+
+<!-- Combine tray -->
+<div id="tray" class="tray" hidden>
+  <button id="tray-toggle" class="tray-toggle">
+    <span>🧺 조합함</span>
+    <span id="tray-count" class="tray-count">0</span>
+  </button>
+</div>
+
+<div id="combine-modal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="combine-title">
+    <div class="modal-head">
+      <h2 id="combine-title">스킬 조합하기</h2>
+      <button class="drawer-close" data-close-modal aria-label="닫기">✕</button>
+    </div>
+    <div id="combine-list" class="combine-list"></div>
+    <div class="combine-actions">
+      <button id="combine-copy" class="btn btn-primary">전체 내용 복사</button>
+      <button id="combine-download" class="btn">.md로 다운로드</button>
+      <button id="combine-clear" class="btn btn-ghost">비우기</button>
+    </div>
+    <details class="combine-help">
+      <summary>이 조합을 실제로 쓰는 방법</summary>
+      <p>다운로드한 내용을 각 스킬별로 나눠 <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code> (Claude Code) 나 해당 Codex 설정 경로에 저장하면 그대로 사용할 수 있어요.
+      여러 스킬을 한 번에 검토하거나, 새 스킬을 만들 때 참고 자료로 합쳐보는 용도로도 유용합니다.</p>
+    </details>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+name: Update skills data
+
+on:
+  schedule:
+    # 03:17 UTC daily (~12:17 KST)
+    - cron: "17 3 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "data/sources.json"
+      - "data/categories.json"
+      - "scripts/fetch-skills.mjs"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-skills
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest skills
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-skills.mjs
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/skills.json; then
+            echo "No skill changes."
+          else
+            git add data/skills.json
+            git commit -m "chore: update skills data ($(date -u +%Y-%m-%d))"
+            git push
+          fi
