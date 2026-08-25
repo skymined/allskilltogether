@@ -40,8 +40,20 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if git diff --quiet -- data/skills.json; then
             echo "No skill changes."
-          else
-            git add data/skills.json
-            git commit -m "chore: update skills data ($(date -u +%Y-%m-%d))"
-            git push
+            exit 0
           fi
+          git add data/skills.json
+          git commit -m "chore: update skills data ($(date -u +%Y-%m-%d))"
+          # A manual push to main while this job was scanning is a normal
+          # race, not a failure — rebase onto it and retry a few times
+          # rather than letting the job fail on a stale push.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push rejected, rebasing onto latest main (attempt $attempt)..."
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "::error::could not push skills data update after retries"
+          exit 1
