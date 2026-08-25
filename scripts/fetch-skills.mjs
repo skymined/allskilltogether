@@ -28,9 +28,25 @@ function headers(extra = {}) {
   return h;
 }
 
-async function gh(urlPath, extra) {
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function gh(urlPath, extra, attempt = 0) {
   const url = urlPath.startsWith("http") ? urlPath : `${API}${urlPath}`;
   const res = await fetch(url, { headers: headers(extra) });
+  if ((res.status === 403 || res.status === 429) && attempt < 3) {
+    const remaining = res.headers.get("x-ratelimit-remaining");
+    const resetHeader = res.headers.get("x-ratelimit-reset");
+    let waitMs = 2000 * (attempt + 1);
+    if (remaining === "0" && resetHeader) {
+      waitMs = Math.max(waitMs, parseInt(resetHeader, 10) * 1000 - Date.now() + 1000);
+    }
+    waitMs = Math.min(waitMs, 30000);
+    console.warn(`  ! rate limited on ${url} (attempt ${attempt + 1}), waiting ${Math.round(waitMs / 1000)}s...`);
+    await sleep(waitMs);
+    return gh(urlPath, extra, attempt + 1);
+  }
   if (!res.ok) {
     const body = await res.text().catch(() => "");
     throw new Error(`GitHub API ${res.status} for ${url}: ${body.slice(0, 300)}`);
@@ -38,15 +54,31 @@ async function gh(urlPath, extra) {
   return res.json();
 }
 
-async function ghRaw(repo, branch, filePath) {
+async function ghRaw(repo, branch, filePath, attempt = 0) {
   const url = `https://raw.githubusercontent.com/${repo}/${branch}/${filePath}`;
   const res = await fetch(url, { headers: { "User-Agent": "allskilltogether-skill-crawler" } });
-  if (!res.ok) throw new Error(`raw ${res.status} for ${url}`);
+  if (!res.ok) {
+    if (res.status >= 500 && attempt < 2) {
+      await sleep(1500 * (attempt + 1));
+      return ghRaw(repo, branch, filePath, attempt + 1);
+    }
+    throw new Error(`raw ${res.status} for ${url}`);
+  }
   return res.text();
 }
 
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
+// Runs `fn` over `items` with at most `limit` in flight at once.
+async function mapLimit(items, limit, fn) {
+  const results = new Array(items.length);
+  let idx = 0;
+  async function worker() {
+    while (idx < items.length) {
+      const current = idx++;
+      results[current] = await fn(items[current], current);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
 }
 
 // Very small YAML front-matter reader: only needs top-level `key: value`
@@ -85,15 +117,26 @@ function slugify(s) {
     .replace(/(^-|-$)/g, "");
 }
 
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Matches at a word-START boundary only (not a full \b...\b word match), so
+// stemmed keywords like "vulnerab" still match "vulnerability" while short
+// keywords like "nda" no longer accidentally match inside "standard".
+function keywordRegex(kw) {
+  return new RegExp(`\\b${escapeRegex(kw)}`, "i");
+}
+
 function categorize(rules, overrides, key, name, description) {
   if (overrides[key]) return overrides[key];
-  const hay = `${name} ${description}`.toLowerCase();
+  const hay = `${name} ${description}`;
   let best = null;
   let bestScore = 0;
   for (const rule of rules) {
     let score = 0;
     for (const kw of rule.keywords) {
-      if (hay.includes(kw)) score++;
+      if (keywordRegex(kw).test(hay)) score++;
     }
     if (score > bestScore) {
       bestScore = score;
@@ -136,17 +179,28 @@ async function repoMeta(repo) {
 }
 
 async function processCollection(source, catRules, overrides) {
-  const { repo, branch = "main", tool, match = ["SKILL.md"], exclude = [] } = source;
+  const {
+    repo,
+    branch = "main",
+    tool,
+    match = ["SKILL.md"],
+    exclude = [],
+    excludePrefixes = [],
+    excludeDotDirs = false,
+  } = source;
   console.log(`Scanning collection ${repo}@${branch} for ${match.join(", ")} ...`);
   const files = await listTreeFiles(repo, branch);
-  const hits = files.filter(
-    (f) => match.includes(f.path.split("/").pop()) && !exclude.includes(f.path)
-  );
+  const hits = files.filter((f) => {
+    if (!match.includes(f.path.split("/").pop())) return false;
+    if (exclude.includes(f.path)) return false;
+    if (excludePrefixes.some((p) => f.path.startsWith(p))) return false;
+    if (excludeDotDirs && f.path.split("/")[0].startsWith(".")) return false;
+    return true;
+  });
   console.log(`  found ${hits.length} match(es)`);
 
   const meta = await repoMeta(repo);
-  const results = [];
-  for (const hit of hits) {
+  const results = await mapLimit(hits, 6, async (hit) => {
     try {
       const raw = await ghRaw(repo, branch, hit.path);
       const fm = parseFrontmatter(raw);
@@ -155,7 +209,7 @@ async function processCollection(source, catRules, overrides) {
       const key = `${repo}#${hit.path}`;
       const category = categorize(catRules, overrides, key, name, description);
       const updatedAt = (await lastCommitDate(repo, branch, hit.path)) || meta.pushedAt;
-      results.push({
+      return {
         id: slugify(`${tool}-${repo}-${hit.path}`),
         name,
         description,
@@ -168,13 +222,13 @@ async function processCollection(source, catRules, overrides) {
         repo_url: `https://github.com/${repo}`,
         stars: meta.stars,
         updated_at: updatedAt,
-      });
-      await sleep(120);
+      };
     } catch (e) {
       console.warn(`  ! skipping ${repo}/${hit.path}: ${e.message}`);
+      return null;
     }
-  }
-  return results;
+  });
+  return results.filter(Boolean);
 }
 
 async function processSingle(source, catRules, overrides) {

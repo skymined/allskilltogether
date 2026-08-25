@@ -1,5 +1,5 @@
 {
-  "_comment": "Repositories to scan for skills. type 'collection' walks the whole repo tree looking for files whose name is in 'match'. type 'single' points at one exact 'path' (for repos that hold just one skill). 'category' on a single entry pre-assigns a category. Add sources here — the next scheduled run (daily) or a manual workflow_dispatch picks them up automatically.",
+  "_comment": "Repositories to scan for skills. type 'collection' walks the whole repo tree looking for files whose name is in 'match'. type 'single' points at one exact 'path' (for repos that hold just one skill). 'exclude' skips exact paths; 'excludePrefixes' skips any path starting with one of those strings (used to drop auto-generated or mirrored subtrees); 'excludeDotDirs' skips any path whose first segment starts with '.' (used to drop symlinked per-tool mirror directories like .gemini/, .codex/). Add sources here — the next scheduled run (daily) or a manual workflow_dispatch picks them up automatically.",
   "repos": [
     {
       "repo": "anthropics/skills",
@@ -9,6 +9,57 @@
       "match": ["SKILL.md"],
       "exclude": ["template/SKILL.md"],
       "notes": "Official Anthropic example Agent Skills"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Official Claude Code CLI repo — skills bundled with first-party plugins (plugin-dev, hookify, migration helpers, etc.)"
+    },
+    {
+      "repo": "alirezarezvani/claude-skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "excludeDotDirs": true,
+      "notes": "Large role-based marketplace (marketing, finance, compliance, product, engineering, research, PM, ...). .gemini/ is a mirrored copy of the same catalog for Gemini CLI — excluded to avoid duplicates."
+    },
+    {
+      "repo": "ComposioHQ/awesome-claude-skills",
+      "branch": "master",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "excludePrefixes": ["composio-skills/"],
+      "notes": "Hand-authored example skills. composio-skills/ is 800+ auto-generated one-skill-per-SaaS-app templates — excluded as low-signal noise."
+    },
+    {
+      "repo": "openai/skills",
+      "branch": "main",
+      "tool": "codex",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Official OpenAI 'Skills Catalog for Codex' — the direct Codex analogue of anthropics/skills."
+    },
+    {
+      "repo": "jMerta/codex-skills",
+      "branch": "main",
+      "tool": "codex",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Community Codex CLI skills catalog focused on dev workflows (git, PR, CI, code review, TDD)."
+    },
+    {
+      "repo": "composio-community/awesome-codex-skills",
+      "branch": "master",
+      "tool": "codex",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "excludePrefixes": ["composio-skills/"],
+      "notes": "Codex-flavored counterpart to ComposioHQ/awesome-claude-skills; same auto-generated composio-skills/ subtree excluded."
     }
   ]
 }
