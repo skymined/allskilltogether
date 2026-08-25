@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Re-applies the category rules in data/categories.json to the skills
-// already in data/skills.json, without re-fetching anything from GitHub.
-// Useful right after editing keyword_rules/overrides.
+// Re-applies the category rules in data/categories.json AND the curated
+// summaries in data/summaries.json to the skills already in
+// data/skills.json, without re-fetching anything from GitHub. Useful
+// right after editing keyword_rules/overrides or merging new summaries.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,9 +34,29 @@ function categorize(rules, overrides, key, name, description) {
   return best || "other";
 }
 
+function heuristicSummary(description) {
+  if (!description) return "";
+  let s = description
+    .replace(/^Use this skill (whenever|when)\s+(the user wants to\s+)?/i, "")
+    .replace(/^Use (whenever|when)\s+(the user|someone)\s+wants to\s+/i, "")
+    .replace(/^This skill (helps you |allows you to )?/i, "")
+    .trim();
+  const firstSentence = s.split(/(?<=[.!?])\s/)[0] || s;
+  s = firstSentence.replace(/[.!?]+$/, "").trim();
+  if (s.length > 0) s = s[0].toUpperCase() + s.slice(1);
+  if (s.length > 90) s = s.slice(0, 87).trim() + "…";
+  return s;
+}
+
 async function main() {
   const categories = JSON.parse(await readFile(path.join(DATA_DIR, "categories.json"), "utf8"));
   const data = JSON.parse(await readFile(path.join(DATA_DIR, "skills.json"), "utf8"));
+  let summaries = {};
+  try {
+    summaries = JSON.parse(await readFile(path.join(DATA_DIR, "summaries.json"), "utf8"));
+  } catch {
+    // no curated summaries yet
+  }
 
   let changed = 0;
   for (const s of data.skills) {
@@ -43,11 +64,12 @@ async function main() {
     const next = categorize(categories.keyword_rules, categories.overrides, key, s.name, s.description);
     if (next !== s.category) changed++;
     s.category = next;
+    s.summary = summaries[s.id] || heuristicSummary(s.description);
   }
   data.categories = categories.list;
 
   await writeFile(path.join(DATA_DIR, "skills.json"), JSON.stringify(data, null, 2) + "\n", "utf8");
-  console.log(`Recategorized ${data.skills.length} skills, ${changed} changed.`);
+  console.log(`Recategorized ${data.skills.length} skills, ${changed} category changes; summaries reapplied.`);
 }
 
 main().catch((e) => {
