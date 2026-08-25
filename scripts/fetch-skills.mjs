@@ -300,15 +300,26 @@ async function main() {
     return db - da;
   });
 
+  // Only bump generated_at when the actual content changed — otherwise a
+  // no-op scheduled run would still produce a commit every day just from
+  // the timestamp, and the "last updated" pill would lie about freshness.
+  const canonical = (list) => JSON.stringify([...list].sort((a, b) => a.id.localeCompare(b.id)));
+  const contentUnchanged =
+    canonical(merged) === canonical(existing.skills || []) &&
+    JSON.stringify(categories.list) === JSON.stringify(existing.categories || []);
+  const generatedAt = process.env.SKILLS_BUILD_TIME || new Date().toISOString();
+
   const output = {
-    generated_at: process.env.SKILLS_BUILD_TIME || new Date().toISOString(),
+    generated_at: contentUnchanged && existing.generated_at ? existing.generated_at : generatedAt,
     categories: categories.list,
     count: merged.length,
     skills: merged,
   };
 
   await writeFile(path.join(DATA_DIR, "skills.json"), JSON.stringify(output, null, 2) + "\n", "utf8");
-  console.log(`\nWrote ${merged.length} skills to data/skills.json`);
+  console.log(
+    `\nWrote ${merged.length} skills to data/skills.json` + (contentUnchanged ? " (no content changes)" : "")
+  );
 }
 
 main().catch((e) => {
