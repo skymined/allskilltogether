@@ -34,15 +34,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fetch-skills.mjs
 
+      - name: Refresh README stats
+        run: node scripts/update-readme.mjs
+
       - name: Commit changes if any
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/skills.json; then
+          if git diff --quiet -- data/skills.json README.md; then
             echo "No skill changes."
             exit 0
           fi
-          git add data/skills.json
+          git add data/skills.json README.md
           git commit -m "chore: update skills data ($(date -u +%Y-%m-%d))"
           # A manual push to main while this job was scanning is a normal
           # race, not a failure — rebase onto it and retry a few times
