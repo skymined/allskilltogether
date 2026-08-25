@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This license covers the code in this repository (the crawler, the website,
-the data-processing scripts). It does NOT cover the third-party skills
-indexed in data/skills.json — those remain the property of their respective
-authors under their own repos' licenses. This site only links to and fetches
-their content live from GitHub; it does not redistribute it.
