@@ -1,0 +1,221 @@
+{
+  "_comment": "Curated combo bundles. Every entry must be traceable to a real source (an upstream plugin manifest that bundles these skills together, or a documented community discussion) — never invent a combo just because it sounds plausible. skill_ids reference the exact `id` field in data/skills.json.",
+  "combos": [
+    {
+      "id": "office-document-toolkit",
+      "title": "Office Document Toolkit",
+      "use_case": "Read, create, and edit Word, Excel, PowerPoint, and PDF files in one pass",
+      "skill_ids": [
+        "claude-anthropics-skills-skills-docx-skill-md",
+        "claude-anthropics-skills-skills-xlsx-skill-md",
+        "claude-anthropics-skills-skills-pptx-skill-md",
+        "claude-anthropics-skills-skills-pdf-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/anthropics/skills/main/.claude-plugin/marketplace.json",
+      "evidence": "Anthropic's official \"document-skills\" plugin bundles exactly these four skills."
+    },
+    {
+      "id": "anthropic-example-skills-bundle",
+      "title": "Anthropic Example Skills Bundle",
+      "use_case": "A starter set covering skill authoring, MCP server building, visual/brand design, internal comms, and web-app testing",
+      "skill_ids": [
+        "claude-anthropics-skills-skills-algorithmic-art-skill-md",
+        "claude-anthropics-skills-skills-brand-guidelines-skill-md",
+        "claude-anthropics-skills-skills-canvas-design-skill-md",
+        "claude-anthropics-skills-skills-doc-coauthoring-skill-md",
+        "claude-anthropics-skills-skills-frontend-design-skill-md",
+        "claude-anthropics-skills-skills-internal-comms-skill-md",
+        "claude-anthropics-skills-skills-mcp-builder-skill-md",
+        "claude-anthropics-skills-skills-skill-creator-skill-md",
+        "claude-anthropics-skills-skills-slack-gif-creator-skill-md",
+        "claude-anthropics-skills-skills-theme-factory-skill-md",
+        "claude-anthropics-skills-skills-web-artifacts-builder-skill-md",
+        "claude-anthropics-skills-skills-webapp-testing-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/anthropics/skills/main/.claude-plugin/marketplace.json",
+      "evidence": "Anthropic's official \"example-skills\" plugin bundles all 12 of these."
+    },
+    {
+      "id": "superpowers-feature-pipeline",
+      "title": "Superpowers Feature-Development Pipeline",
+      "use_case": "Disciplined end-to-end feature development: idea → design → TDD implementation → reviewed, merged branch",
+      "skill_ids": [
+        "claude-obra-superpowers-skills-brainstorming-skill-md",
+        "claude-obra-superpowers-skills-using-git-worktrees-skill-md",
+        "claude-obra-superpowers-skills-writing-plans-skill-md",
+        "claude-obra-superpowers-skills-subagent-driven-development-skill-md",
+        "claude-obra-superpowers-skills-executing-plans-skill-md",
+        "claude-obra-superpowers-skills-test-driven-development-skill-md",
+        "claude-obra-superpowers-skills-requesting-code-review-skill-md",
+        "claude-obra-superpowers-skills-finishing-a-development-branch-skill-md"
+      ],
+      "origin": "repo_readme_recommendation",
+      "source_url": "https://github.com/obra/superpowers",
+      "evidence": "The obra/superpowers README lays out this exact sequential chain; independently corroborated in a Hacker News discussion (\"Superpowers 6\", item 48739459)."
+    },
+    {
+      "id": "playwright-test-suite",
+      "title": "Playwright Test Engineering Suite",
+      "use_case": "Set up, generate, review, fix, and report on Playwright e2e tests, plus BrowserStack and TestRail integration",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-pw-init-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-pw-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-generate-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-pw-review-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-fix-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-coverage-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-report-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-migrate-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-browserstack-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-team-playwright-pro-skills-testrail-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/playwright-pro",
+      "evidence": "All 10 skills live under the same playwright-pro sub-project, designed as one toolkit."
+    },
+    {
+      "id": "virtual-c-suite-boardroom",
+      "title": "Virtual C-Suite Boardroom",
+      "use_case": "Simulate a full executive team (CFO, CMO, CRO, CISO, General Counsel, and more) to stress-test a plan before committing to it",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-boardroom-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-office-hours-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-cfo-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-cmo-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-cro-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-ciso-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-gc-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-cpo-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-cto-review-skill-md",
+        "claude-alirezarezvani-claude-skills-c-level-agents-skills-decide-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/c-level-agents",
+      "evidence": "Part of the 22-skill \"c-level-agents\" plugin (persona layer for the c-level-skills bundle); showing a representative subset."
+    },
+    {
+      "id": "medtech-regulatory-stack",
+      "title": "MedTech Regulatory & Quality Stack",
+      "use_case": "HealthTech/MedTech regulatory affairs and QMS compliance across ISO, MDR, FDA, GDPR, and SOC 2 requirements",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-quality-manager-qms-iso13485-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-mdr-745-specialist-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-fda-consultant-specialist-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-gdpr-dsgvo-expert-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-information-security-manager-iso27001-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-capa-officer-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-risk-management-specialist-skill-md",
+        "claude-alirezarezvani-claude-skills-ra-qm-team-skills-soc2-compliance-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/.claude-plugin/marketplace.json",
+      "evidence": "The \"ra-qm-skills\" plugin description explicitly lists this set of regulatory/quality skills."
+    },
+    {
+      "id": "finance-saas-metrics-stack",
+      "title": "Finance & SaaS Metrics Stack",
+      "use_case": "Financial ratio/DCF analysis, SaaS unit-economics coaching, and investment memos in one pass",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-finance-skills-financial-analyst-skill-md",
+        "claude-alirezarezvani-claude-skills-finance-skills-saas-metrics-coach-skill-md",
+        "claude-alirezarezvani-claude-skills-finance-business-investment-advisor-skills-business-investment-advisor-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/.claude-plugin/marketplace.json",
+      "evidence": "The \"finance-skills\" plugin description explicitly lists these three skills."
+    },
+    {
+      "id": "post-sale-growth-stack",
+      "title": "Post-Sale Revenue & Growth Stack",
+      "use_case": "Customer success, sales engineering, revenue operations, and proposal writing for post-sale growth",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-business-growth-skills-customer-success-manager-skill-md",
+        "claude-alirezarezvani-claude-skills-business-growth-skills-sales-engineer-skill-md",
+        "claude-alirezarezvani-claude-skills-business-growth-skills-revenue-operations-skill-md",
+        "claude-alirezarezvani-claude-skills-business-growth-skills-contract-and-proposal-writer-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/.claude-plugin/marketplace.json",
+      "evidence": "The \"business-growth-skills\" plugin description explicitly lists these four skills."
+    },
+    {
+      "id": "product-management-stack",
+      "title": "End-to-End Product Management Stack",
+      "use_case": "Product strategy through delivery: PM toolkit, UX research, design system, competitive analysis, landing pages, analytics, and experimentation",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-product-team-skills-product-manager-toolkit-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-product-strategist-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-ux-researcher-designer-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-ui-design-system-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-competitive-teardown-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-landing-page-generator-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-saas-scaffolder-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-product-analytics-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-experiment-designer-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-product-discovery-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-roadmap-communicator-skill-md",
+        "claude-alirezarezvani-claude-skills-product-team-skills-spec-to-repo-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://raw.githubusercontent.com/alirezarezvani/claude-skills/main/.claude-plugin/marketplace.json",
+      "evidence": "The \"product-skills\" plugin description explicitly lists all 12 of these skills."
+    },
+    {
+      "id": "agenthub-multi-agent-competition",
+      "title": "Multi-Agent Competition Hub",
+      "use_case": "Launch competing subagents on the same task in parallel git worktrees and automatically merge the best result",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-hub-init-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-spawn-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-hub-status-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-eval-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-merge-skill-md",
+        "claude-alirezarezvani-claude-skills-engineering-agenthub-skills-run-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering/agenthub",
+      "evidence": "All 8 skills live under the same agenthub sub-project, designed as one pipeline (init → spawn → eval → merge, with \"run\" chaining the whole thing)."
+    },
+    {
+      "id": "managed-agent-launcher",
+      "title": "Managed Agent Launcher",
+      "use_case": "Interview, build, grade, and deploy a scheduled or event-driven Claude managed agent end-to-end",
+      "skill_ids": [
+        "claude-alirezarezvani-claude-skills-agent-launcher-skills-interview-skill-md",
+        "claude-alirezarezvani-claude-skills-agent-launcher-skills-stage-launch-skill-md",
+        "claude-alirezarezvani-claude-skills-agent-launcher-skills-grade-iterate-skill-md",
+        "claude-alirezarezvani-claude-skills-agent-launcher-skills-run-without-you-skill-md",
+        "claude-alirezarezvani-claude-skills-agent-launcher-skills-wrap-up-skill-md"
+      ],
+      "origin": "official_plugin_bundle",
+      "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/agent-launcher",
+      "evidence": "All 6 skills live under the same agent-launcher sub-project, forming one build → grade → launch pipeline."
+    },
+    {
+      "id": "csv-to-deck-combo",
+      "title": "CSV-to-Deck Combo",
+      "use_case": "Turn a raw spreadsheet into a board-ready slide deck in a single prompt",
+      "skill_ids": [
+        "claude-anthropics-skills-skills-xlsx-skill-md",
+        "claude-anthropics-skills-skills-pptx-skill-md"
+      ],
+      "origin": "community_discussion",
+      "source_url": "https://dev.to/suraj_khaitan_f893c243958/i-tried-100-claude-skills-these-are-the-best-1m4a",
+      "evidence": "\"Use xlsx + pptx together to turn a CSV into a board-ready deck in one prompt.\""
+    },
+    {
+      "id": "self-bootstrapping-toolkit",
+      "title": "Self-Bootstrapping Skill Toolkit",
+      "use_case": "Author new skills and give them live external tool access in the same setup",
+      "skill_ids": [
+        "claude-anthropics-skills-skills-skill-creator-skill-md",
+        "claude-anthropics-skills-skills-mcp-builder-skill-md"
+      ],
+      "origin": "community_discussion",
+      "source_url": "https://dev.to/suraj_khaitan_f893c243958/i-tried-100-claude-skills-these-are-the-best-1m4a",
+      "evidence": "\"Pair it [skill-creator] with mcp-builder and you've got a self-bootstrapping agent toolkit.\""
+    }
+  ]
+}

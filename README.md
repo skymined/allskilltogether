@@ -9,6 +9,7 @@ data/sources.json    → GitHub repos to scan (Claude / Codex)
 data/categories.json → category definitions + keyword-based auto-classification + manual overrides
 data/summaries.json  → curated one-line card summaries, keyed by skill id
 scripts/fetch-skills.mjs → scans the repos, parses SKILL.md files, writes data/skills.json
+scripts/recategorize.mjs → re-applies category rules to the existing data/skills.json without hitting GitHub again (fast iteration after editing categories.json)
 data/skills.json     → the final data the website actually reads (auto-generated — don't edit by hand)
 data/combos.json     → curated "recommended combo" bundles shown at the top of the page
 index.html / assets/*.js,css → static frontend (no framework, runs straight in the browser)

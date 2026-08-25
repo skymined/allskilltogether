@@ -205,6 +205,7 @@ async function processCollection(source, catRules, overrides) {
     exclude = [],
     excludePrefixes = [],
     excludeDotDirs = false,
+    includePrefix = null,
   } = source;
   console.log(`Scanning collection ${repo}@${branch} for ${match.join(", ")} ...`);
   const files = await listTreeFiles(repo, branch);
@@ -213,6 +214,7 @@ async function processCollection(source, catRules, overrides) {
     if (exclude.includes(f.path)) return false;
     if (excludePrefixes.some((p) => f.path.startsWith(p))) return false;
     if (excludeDotDirs && f.path.split("/")[0].startsWith(".")) return false;
+    if (includePrefix && !f.path.startsWith(includePrefix)) return false;
     return true;
   });
   console.log(`  found ${hits.length} match(es)`);

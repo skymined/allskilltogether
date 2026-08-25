@@ -387,11 +387,10 @@
   }
 
   // ---- recommended combos -------------------------------------------------
-  function matchSkillsByName(names) {
-    const lowerNames = names.map((n) => n.toLowerCase());
-    return lowerNames
-      .map((n) => state.skills.find((s) => s.name.toLowerCase() === n))
-      .filter(Boolean);
+  // Combos reference skills by their exact `id` (not name) since several
+  // skills share the same short name across different source repos.
+  function matchSkillsByIds(ids) {
+    return ids.map((id) => state.skills.find((s) => s.id === id)).filter(Boolean);
   }
 
   function renderCombos(combos) {
@@ -400,7 +399,7 @@
     row.innerHTML = "";
 
     const usable = combos
-      .map((c) => ({ ...c, matched: matchSkillsByName(c.skill_names || []) }))
+      .map((c) => ({ ...c, matched: matchSkillsByIds(c.skill_ids || []) }))
       .filter((c) => c.matched.length >= 2);
 
     if (usable.length === 0) {
