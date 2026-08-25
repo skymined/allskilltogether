@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skymined.github.io/allskilltogether/sitemap.xml
