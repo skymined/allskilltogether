@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T16:15:05.096Z",
+  "generated_at": "2026-08-25T16:24:42.174Z",
   "categories": [
     {
       "id": "writing",
@@ -1032,7 +1032,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/claude-api/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/claude-api/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-08-21T17:10:53Z",
       "summary": "Reference guide for Claude API models, pricing, and features"
     },
@@ -2262,7 +2262,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/academy-guide/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/academy-guide/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-08-18T16:02:05Z",
       "summary": "Recommends Claude Academy courses matching the user's question"
     },
@@ -2487,7 +2487,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/discernment-nudge/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/discernment-nudge/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-08-17T17:23:10Z",
       "summary": "Appends critical follow-up questions after substantive answers"
     },
@@ -3732,7 +3732,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/spec-driven-development/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/spec-driven-development/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-14T18:50:02Z",
       "summary": "Writes specs and breaks requirements into modules before coding"
     },
@@ -3747,7 +3747,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/security-and-hardening/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/security-and-hardening/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-14T18:49:36Z",
       "summary": "Hardens code against security vulnerabilities and privacy risks"
     },
@@ -3807,7 +3807,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/api-and-interface-design/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/api-and-interface-design/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-13T00:04:08Z",
       "summary": "Guides design of stable APIs and module interfaces"
     },
@@ -3822,7 +3822,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/brainstorming/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-08-12T16:53:21Z",
       "summary": "Explores requirements and design intent before building features"
     },
@@ -3837,7 +3837,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/finishing-a-development-branch/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/finishing-a-development-branch/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-08-12T16:53:21Z",
       "summary": "Decides how to integrate a finished, tested development branch"
     },
@@ -3852,7 +3852,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/subagent-driven-development/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-08-12T16:53:21Z",
       "summary": "Executes implementation plans via independent subagent tasks"
     },
@@ -3867,7 +3867,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/using-superpowers/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/using-superpowers/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-08-12T16:53:21Z",
       "summary": "Sets the process for discovering and invoking other skills"
     },
@@ -3882,7 +3882,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/writing-plans/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/writing-plans/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-08-12T16:53:21Z",
       "summary": "Turns a spec into a written multi-step implementation plan"
     },
@@ -3897,7 +3897,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/planning-and-task-breakdown/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/planning-and-task-breakdown/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-12T13:33:57Z",
       "summary": "Breaks specs into ordered, implementable tasks"
     },
@@ -3972,7 +3972,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-onboard/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-onboard/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-08-11T14:08:57Z",
       "summary": "Generates onboarding guides for new team members"
     },
@@ -4137,7 +4137,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/code-review-and-quality/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/code-review-and-quality/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Reviews code across multiple quality dimensions before merge"
     },
@@ -4152,7 +4152,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/doubt-driven-development/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/doubt-driven-development/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Runs adversarial review on decisions before they're accepted"
     },
@@ -4167,7 +4167,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/frontend-ui-engineering/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/frontend-ui-engineering/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Builds accessible, production-quality responsive UIs"
     },
@@ -4182,7 +4182,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/incremental-implementation/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/incremental-implementation/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Breaks large code changes into incremental, landable steps"
     },
@@ -4197,7 +4197,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/observability-and-instrumentation/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/observability-and-instrumentation/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Adds logging, metrics, tracing, and alerting to code"
     },
@@ -4212,7 +4212,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/performance-optimization/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/performance-optimization/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Optimizes app performance across frontend, backend, and databases"
     },
@@ -4227,7 +4227,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/shipping-and-launch/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/shipping-and-launch/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Preps production launch checklists, monitoring, and rollback plans"
     },
@@ -4242,7 +4242,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/test-driven-development/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/test-driven-development/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Drives feature and bugfix work with tests written first"
     },
@@ -4257,7 +4257,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/using-agent-skills/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/using-agent-skills/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-08-07T11:27:44Z",
       "summary": "Discovers and routes tasks to the right agent skill"
     },
@@ -5106,7 +5106,7 @@
       "name": "stop-slop-ko",
       "description": "> 한국어 글에서 AI 문체(slop)를 제거하고, 새로 쓸 때는 slop 없이 쓴다. 다음 중 하나라도 해당하면 반드시 사용: (1) 한국어 글에 대해 \"AI가 쓴 것 같다\", \"AI티가 난다\", \"AI 냄새\", \"ChatGPT 같다\", \"판에 박혀 있다\"고 하거나, '이를 통해', '살펴보도록 하겠습니다', '~라고 할 수 있습니다', '단순히 X가 아니라 Y' 같은 패턴을 지적할 때. (2) 블로그·보고서·칼럼·기획서·소개문·이메일·소논문 등 한국어 글을 \"다듬어줘\", \"고쳐줘\", \"자연스럽게 바꿔줘\", \"윤문해줘\", \"퇴고해줘\", \"리라이팅해줘\", \"매끄럽게 해줘\"라고 요청할 때. (3) 위와 같은 종류의 한국어 산문을 새로 작성해달라고 요청할 때 — 생성 단계에서 slop을 만들지 않기 위해 사용. 맞춤법 교정, 번역, 요약, 분량 줄이기, 논리 구조 검토, 단순 어조 변경(더 친근하게 등)은 해당 안 됨.",
       "tool": "claude",
-      "category": "other",
+      "category": "writing",
       "repo": "limleesol/stop-slop-ko",
       "path": "SKILL.md",
       "raw_url": "https://raw.githubusercontent.com/limleesol/stop-slop-ko/main/SKILL.md",
@@ -8052,7 +8052,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/dispatching-parallel-agents/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/dispatching-parallel-agents/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Splits independent tasks across parallel agents"
     },
@@ -8067,7 +8067,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/executing-plans/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/executing-plans/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Executes a written implementation plan with review checkpoints"
     },
@@ -8082,7 +8082,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/receiving-code-review/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/receiving-code-review/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Evaluates code review feedback rigorously before implementing it"
     },
@@ -8097,7 +8097,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/requesting-code-review/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/requesting-code-review/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Verifies completed work against requirements before merging"
     },
@@ -8112,7 +8112,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/systematic-debugging/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Diagnoses bugs systematically before proposing fixes"
     },
@@ -8127,7 +8127,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/test-driven-development/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/test-driven-development/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Writes tests before implementation code"
     },
@@ -8142,7 +8142,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/using-git-worktrees/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Sets up an isolated git worktree for feature work"
     },
@@ -8157,7 +8157,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/verification-before-completion/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/verification-before-completion/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Runs verification commands before claiming work is done"
     },
@@ -8172,7 +8172,7 @@
       "raw_url": "https://raw.githubusercontent.com/obra/superpowers/main/skills/writing-skills/SKILL.md",
       "html_url": "https://github.com/obra/superpowers/blob/main/skills/writing-skills/SKILL.md",
       "repo_url": "https://github.com/obra/superpowers",
-      "stars": 277422,
+      "stars": 277428,
       "updated_at": "2026-07-24T00:27:16Z",
       "summary": "Creates, edits, and validates Claude skill files"
     },
@@ -8307,7 +8307,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/debugging-and-error-recovery/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/debugging-and-error-recovery/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-07-22T20:35:05Z",
       "summary": "Guides systematic root-cause debugging for failures and errors"
     },
@@ -8382,7 +8382,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/source-driven-development/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/source-driven-development/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-07-21T12:49:51Z",
       "summary": "Grounds code decisions in official documentation citations"
     },
@@ -8697,7 +8697,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-chat/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-chat/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-17T08:57:21Z",
       "summary": "Answers codebase questions using a knowledge graph"
     },
@@ -8712,7 +8712,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-diff/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-diff/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-17T08:57:21Z",
       "summary": "Analyzes git diffs and PRs for impact and risk"
     },
@@ -8727,7 +8727,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-domain/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-domain/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-17T08:57:21Z",
       "summary": "Extracts business domain knowledge into an interactive flow graph"
     },
@@ -8742,7 +8742,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-explain/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-explain/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-17T08:57:21Z",
       "summary": "Explains a specific file, function, or module in depth"
     },
@@ -8802,7 +8802,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-17T03:33:40Z",
       "summary": "Builds an interactive knowledge graph of a codebase's architecture"
     },
@@ -8817,7 +8817,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/docx/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/docx/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-07-17T02:47:37Z",
       "summary": "Creates and edits Word documents"
     },
@@ -8832,7 +8832,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-07-17T02:47:37Z",
       "summary": "Creates and edits PowerPoint presentations"
     },
@@ -8847,7 +8847,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/xlsx/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/xlsx/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-07-17T02:47:37Z",
       "summary": "Creates and edits Excel spreadsheets with formulas and formatting"
     },
@@ -8877,7 +8877,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/documentation-and-adrs/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/documentation-and-adrs/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-07-16T17:03:19Z",
       "summary": "Records architectural decisions and documentation for future engineers"
     },
@@ -9807,7 +9807,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-dashboard/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-dashboard/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-10T12:44:43Z",
       "summary": "Launches an interactive dashboard visualizing a codebase's knowledge graph"
     },
@@ -9882,7 +9882,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-figma/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-figma/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-10T09:29:37Z",
       "summary": "Builds an interactive design knowledge graph from a Figma file"
     },
@@ -9897,7 +9897,7 @@
       "raw_url": "https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/understand-anything-plugin/skills/understand-knowledge/SKILL.md",
       "html_url": "https://github.com/Egonex-AI/Understand-Anything/blob/main/understand-anything-plugin/skills/understand-knowledge/SKILL.md",
       "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
-      "stars": 80459,
+      "stars": 80462,
       "updated_at": "2026-07-10T09:29:37Z",
       "summary": "Builds a knowledge graph from an LLM wiki with entities and topic clusters"
     },
@@ -11037,7 +11037,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/deprecation-and-migration/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/deprecation-and-migration/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-07-05T13:58:17Z",
       "summary": "Plans deprecation and migration of old systems, APIs, or features"
     },
@@ -11127,7 +11127,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-wechat-summary/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-wechat-summary/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-07-04T01:22:55Z",
       "summary": "Summarizes WeChat group chats into digests with per-user profiles"
     },
@@ -11532,7 +11532,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/git-workflow-and-versioning/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/git-workflow-and-versioning/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-06-27T17:36:47Z",
       "summary": "Structures git branching, commits, releases, and changelogs"
     },
@@ -11712,7 +11712,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/idea-refine/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/idea-refine/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-06-25T17:49:56Z",
       "summary": "Sharpens vague ideas into actionable concepts via divergent/convergent thinking"
     },
@@ -12957,7 +12957,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/frontend-design/skills/frontend-design/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2026-06-18T02:25:44Z",
       "summary": "Guides distinctive visual and typographic UI design decisions"
     },
@@ -13257,7 +13257,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-post-to-wechat/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-post-to-wechat/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T05:00:38Z",
       "summary": "Publishes articles and image posts to WeChat Official Accounts"
     },
@@ -13272,7 +13272,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-translate/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-translate/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T05:00:38Z",
       "summary": "Translates and localizes articles with glossary support"
     },
@@ -13287,7 +13287,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-article-illustrator/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-article-illustrator/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Generates illustrations placed at key points in an article"
     },
@@ -13302,7 +13302,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-comic/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-comic/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Creates original educational comics with panel layouts"
     },
@@ -13317,7 +13317,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-cover-image/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-cover-image/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Generates styled article cover images in multiple aspect ratios"
     },
@@ -13332,7 +13332,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-infographic/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-infographic/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Generates infographics from content using varied layouts and styles"
     },
@@ -13347,7 +13347,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-slide-deck/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-slide-deck/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Generates slide deck outlines and images for presentations"
     },
@@ -13362,7 +13362,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-xhs-images/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-xhs-images/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-13T04:56:34Z",
       "summary": "Generates social media infographic card series in cartoon styles"
     },
@@ -15072,7 +15072,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/browser-testing-with-devtools/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/browser-testing-with-devtools/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-06-11T03:20:03Z",
       "summary": "Tests and debugs web apps in real browsers via Chrome DevTools"
     },
@@ -15897,7 +15897,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-06-09T19:33:41Z",
       "summary": "Guides distinctive, non-templated visual UI design decisions"
     },
@@ -16047,7 +16047,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-image-gen/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-image-gen/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-05T20:56:19Z",
       "summary": "Generates images across multiple AI image generation APIs"
     },
@@ -17397,7 +17397,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-danger-gemini-web/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-danger-gemini-web/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-02T04:21:05Z",
       "summary": "Generates text and images via a reverse-engineered Gemini Web API"
     },
@@ -17412,7 +17412,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-danger-x-to-markdown/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-danger-x-to-markdown/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-02T04:21:05Z",
       "summary": "Converts X (Twitter) tweets and articles to markdown"
     },
@@ -17427,7 +17427,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-markdown-to-html/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-markdown-to-html/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-02T04:21:05Z",
       "summary": "Converts Markdown into styled, WeChat-compatible HTML"
     },
@@ -17442,7 +17442,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-post-to-weibo/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-post-to-weibo/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-02T04:21:05Z",
       "summary": "Posts text, images, and articles to Weibo"
     },
@@ -17457,7 +17457,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-post-to-x/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-post-to-x/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-06-02T04:21:05Z",
       "summary": "Posts tweets and long-form articles to X"
     },
@@ -18837,7 +18837,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-electron-extract/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-electron-extract/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-05-24T22:00:31Z",
       "summary": "Extracts and de-minifies source code from Electron app bundles"
     },
@@ -21252,7 +21252,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/interview-me/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/interview-me/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-05-20T18:39:35Z",
       "summary": "Interviews the user question-by-question to uncover their real intent"
     },
@@ -21267,7 +21267,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-diagram/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-diagram/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-05-20T12:58:17Z",
       "summary": "Generates dark-themed SVG diagrams like flowcharts and architecture maps"
     },
@@ -24462,7 +24462,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/.claude/skills/release-skills/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/.claude/skills/release-skills/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-05-05T16:17:45Z",
       "summary": "Automates version bumps, changelogs, and release publishing"
     },
@@ -27282,7 +27282,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-url-to-markdown/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-url-to-markdown/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-04-21T18:39:09Z",
       "summary": "Converts any webpage URL into markdown"
     },
@@ -28152,7 +28152,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-compress-image/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-compress-image/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-04-19T05:48:44Z",
       "summary": "Compresses images to WebP or PNG"
     },
@@ -28167,7 +28167,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-format-markdown/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-format-markdown/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-04-19T05:48:44Z",
       "summary": "Formats and beautifies markdown articles"
     },
@@ -30574,7 +30574,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-skills-trade-earnings-skill-md",
       "name": "trade-earnings",
-      "description": "",
+      "description": "You are a pre-earnings analysis specialist within the AI Trading Analyst system. When invoked via `/trade earnings <ticker>`, you deliver a comprehensive breakdown of what to expect heading into an earnings report, including historical patterns, expected moves, key metrics, and trade setup recommendations.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -30619,7 +30619,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-skills-trade-portfolio-skill-md",
       "name": "trade-portfolio",
-      "description": "",
+      "description": "You are a portfolio analysis specialist within the AI Trading Analyst system. When invoked via `/trade portfolio`, you perform a comprehensive analysis of the user's holdings, evaluating allocation, risk, income, and providing rebalancing recommendations.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -30649,7 +30649,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-skills-trade-report-pdf-skill-md",
       "name": "trade-report-pdf",
-      "description": "",
+      "description": "You are a PDF report generation specialist within the AI Trading Analyst system. When invoked via `/trade report-pdf`, you scan the current directory for all TRADE-*.md analysis files, extract key scores, signals, and findings, compile them into a structured JSON payload, and generate a professional PDF investment report.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -30679,7 +30679,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-skills-trade-screen-skill-md",
       "name": "trade-screen",
-      "description": "",
+      "description": "You are a stock screening specialist within the AI Trading Analyst system. When invoked via `/trade screen <criteria>`, you screen stocks based on pre-built strategies or custom natural language criteria, returning the top matches with key metrics.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -30754,7 +30754,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-skills-trade-watchlist-skill-md",
       "name": "trade-watchlist",
-      "description": "",
+      "description": "You are a watchlist management specialist within the AI Trading Analyst system. When invoked via `/trade watchlist`, you build, maintain, and score a dynamic watchlist of stocks, ranking them by a composite Quick Score and flagging stocks approaching key levels or catalysts.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -30769,7 +30769,7 @@
     {
       "id": "claude-zubair-trabzada-ai-trading-claude-trade-skill-md",
       "name": "trade",
-      "description": "",
+      "description": "You are a comprehensive AI trading research and analysis system for Claude Code. You help traders, investors, and market enthusiasts analyze stocks, build investment theses, assess risk, screen for opportunities, and produce professional PDF reports — all from the command line.",
       "tool": "claude",
       "category": "stocks",
       "repo": "zubair-trabzada/ai-trading-claude",
@@ -32457,7 +32457,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/ci-cd-and-automation/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/ci-cd-and-automation/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-03-31T20:41:45Z",
       "summary": "Sets up CI/CD pipelines, quality gates and deployment strategies"
     },
@@ -32472,7 +32472,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/code-simplification/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/code-simplification/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-03-31T20:41:45Z",
       "summary": "Refactors code for clarity without changing its behavior"
     },
@@ -32487,7 +32487,7 @@
       "raw_url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/context-engineering/SKILL.md",
       "html_url": "https://github.com/addyosmani/agent-skills/blob/main/skills/context-engineering/SKILL.md",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "stars": 89678,
+      "stars": 89681,
       "updated_at": "2026-03-31T20:41:45Z",
       "summary": "Configures agent context and rules files for better session output"
     },
@@ -33267,7 +33267,7 @@
       "raw_url": "https://raw.githubusercontent.com/JimLiu/baoyu-skills/main/skills/baoyu-youtube-transcript/SKILL.md",
       "html_url": "https://github.com/JimLiu/baoyu-skills/blob/main/skills/baoyu-youtube-transcript/SKILL.md",
       "repo_url": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25327,
+      "stars": 25328,
       "updated_at": "2026-03-25T01:59:04Z",
       "summary": "Downloads YouTube transcripts, subtitles, and cover images"
     },
@@ -35337,7 +35337,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/skill-creator/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-03-06T20:06:23Z",
       "summary": "Creates, edits, and benchmarks Claude skills"
     },
@@ -36387,7 +36387,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/pdf/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2026-02-04T02:09:36Z",
       "summary": "Reads, edits, merges, splits, and creates PDF files"
     },
@@ -48597,7 +48597,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/doc-coauthoring/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/doc-coauthoring/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-04T17:01:46Z",
       "summary": "Co-authors docs, proposals, and specs through iterative drafting"
     },
@@ -48612,7 +48612,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/algorithmic-art/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Generates algorithmic art with p5.js and seeded randomness"
     },
@@ -48627,7 +48627,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/brand-guidelines/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Applies Anthropic's brand colors and typography to artifacts"
     },
@@ -48642,7 +48642,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/canvas-design/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Creates posters and visual art as PNG or PDF files"
     },
@@ -48657,7 +48657,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/internal-comms/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/internal-comms/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Drafts internal comms like status reports and incident updates"
     },
@@ -48672,7 +48672,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/mcp-builder/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Builds MCP servers connecting LLMs to external APIs"
     },
@@ -48687,7 +48687,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/slack-gif-creator/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/slack-gif-creator/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Creates animated GIFs optimized for Slack"
     },
@@ -48702,7 +48702,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/theme-factory/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Applies preset or custom visual themes to artifacts"
     },
@@ -48717,7 +48717,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/web-artifacts-builder/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/web-artifacts-builder/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Builds elaborate multi-component web app artifacts with React"
     },
@@ -48732,7 +48732,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/SKILL.md",
       "html_url": "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md",
       "repo_url": "https://github.com/anthropics/skills",
-      "stars": 171507,
+      "stars": 171509,
       "updated_at": "2025-12-01T18:05:36Z",
       "summary": "Tests local web apps via Playwright browser automation"
     },
@@ -48747,7 +48747,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-24T07:24:09Z",
       "summary": "Migrates prompts and code to Claude Opus 4.5"
     },
@@ -48777,7 +48777,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/agent-development/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/agent-development/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides writing subagent definitions and frontmatter for Claude Code plugins"
     },
@@ -48792,7 +48792,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/command-development/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/command-development/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides building slash commands with frontmatter, args, and bash execution"
     },
@@ -48807,7 +48807,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/hook-development/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/hook-development/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides building event-driven hooks for Claude Code plugins"
     },
@@ -48822,7 +48822,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/mcp-integration/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/mcp-integration/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides wiring MCP servers into Claude Code plugins"
     },
@@ -48837,7 +48837,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/plugin-settings/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/plugin-settings/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Documents storing configurable plugin settings in local markdown files"
     },
@@ -48852,7 +48852,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides scaffolding and organizing Claude Code plugin directories"
     },
@@ -48867,7 +48867,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/plugin-dev/skills/skill-development/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T12:09:00Z",
       "summary": "Guides writing new skills for Claude Code plugins"
     },
@@ -48882,7 +48882,7 @@
       "raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/plugins/hookify/skills/writing-rules/SKILL.md",
       "html_url": "https://github.com/anthropics/claude-code/blob/main/plugins/hookify/skills/writing-rules/SKILL.md",
       "repo_url": "https://github.com/anthropics/claude-code",
-      "stars": 142959,
+      "stars": 142960,
       "updated_at": "2025-11-17T11:18:43Z",
       "summary": "Guides writing hookify automation rules"
     },
