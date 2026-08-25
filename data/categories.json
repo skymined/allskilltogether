@@ -20,9 +20,11 @@
     { "id": "support",       "ko": "고객지원",         "en": "Customer Support",     "icon": "🎧" },
     { "id": "translation",   "ko": "번역",             "en": "Translation",          "icon": "🌐" },
     { "id": "science",       "ko": "과학·연구개발",    "en": "Science & Research",   "icon": "🧬" },
+    { "id": "stocks",        "ko": "주식·트레이딩",    "en": "Stocks & Trading",     "icon": "📈" },
     { "id": "other",         "ko": "기타",             "en": "Other",                "icon": "✨" }
   ],
   "keyword_rules": [
+    { "category": "stocks",        "keywords": ["stock", "equity", "ticker", "yfinance", "trading", "technical analysis", "backtest", "candlestick", "10-k filing", "10-q filing", "sec filing", "sec edgar", "earnings call", "earnings estimate", "dcf", "portfolio management", "chart pattern", "nasdaq", "nyse", "krx", "kospi", "股票", "moving average", "rsi divergence", "macd", "options flow", "short volume", "insider trading", "analyst estimate"] },
     { "category": "science",       "keywords": ["chemistry", "biology", "molecul", "protein", "genom", "bioinformatic", "drug discovery", "clinical trial", "biotech", "crispr", "cell biology", "pharmacolog", "chemoinformatic", "biomedical", "proteomic", "cheminformatic"] },
     { "category": "legal",         "keywords": ["gdpr", "dsgvo", "soc 2", "soc2", "hipaa", "iso 27001", "iso 13485", "iso13485", "fda", "mdr 2017", "regulatory", "compliance", "contract review", "nda", "general counsel", "patent", "eu ai act", "quality management system", "legal review", "privacy law"] },
     { "category": "seo",           "keywords": ["seo", "answer engine optimization", "aeo", "app store optimization", "aso", "keyword rank", "search ranking", "serp"] },
@@ -99,6 +101,17 @@
     "NomaDamas/k-skill#korean-humanizer/SKILL.md": "writing",
     "NomaDamas/k-skill#korean-slang-writing/SKILL.md": "writing",
     "CreatoonForge/korean-writing-reviewer#skills/general-agent/SKILL.md": "writing",
-    "ExceptAnyone/ko-tech-blog-skill#plugins/ko-tech-blog/skills/ko-tech-blog/SKILL.md": "writing"
+    "ExceptAnyone/ko-tech-blog-skill#plugins/ko-tech-blog/skills/ko-tech-blog/SKILL.md": "writing",
+    "alirezarezvani/claude-skills#finance/skills/stock-analysis/SKILL.md": "stocks",
+    "NomaDamas/k-skill#korean-stock-search/SKILL.md": "stocks",
+    "NomaDamas/k-skill#toss-investment/SKILL.md": "stocks",
+    "x77xdavid-prog/checkup-skills#plugins/stock-research/skills/stock-research/SKILL.md": "stocks",
+    "daymade/claude-code-skills#daymade-financial/financial-data-collector/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#skills/trade-earnings/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#skills/trade-portfolio/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#skills/trade-report-pdf/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#skills/trade-screen/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#skills/trade-watchlist/SKILL.md": "stocks",
+    "zubair-trabzada/ai-trading-claude#trade/SKILL.md": "stocks"
   }
 }

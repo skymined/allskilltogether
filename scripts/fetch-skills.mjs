@@ -110,6 +110,21 @@ function parseFrontmatter(md) {
   return out;
 }
 
+// A few source repos ship SKILL.md files with no YAML frontmatter at all
+// (spec-noncompliant, but the file is otherwise real content). Fall back to
+// the first real paragraph of the markdown body so we don't end up with an
+// empty description for those.
+function extractBodyFallbackDescription(md) {
+  const body = md.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+  const lines = body.split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#") || trimmed.startsWith("**DISCLAIMER")) continue;
+    return trimmed.slice(0, 400);
+  }
+  return "";
+}
+
 // Cheap fallback for skills that don't have a curated one-liner yet in
 // data/summaries.json (e.g. brand-new skills from a scheduled scan, before
 // a human/Claude has run the summarization pass). Strips the common
@@ -225,7 +240,7 @@ async function processCollection(source, catRules, overrides) {
       const raw = await ghRaw(repo, branch, hit.path);
       const fm = parseFrontmatter(raw);
       const name = fm.name || path.basename(path.dirname(hit.path));
-      const description = fm.description || "";
+      const description = fm.description || extractBodyFallbackDescription(raw);
       const key = `${repo}#${hit.path}`;
       const category = categorize(catRules, overrides, key, name, description);
       const updatedAt = (await lastCommitDate(repo, branch, hit.path)) || meta.pushedAt;
@@ -258,7 +273,7 @@ async function processSingle(source, catRules, overrides) {
     const raw = await ghRaw(repo, branch, filePath);
     const fm = parseFrontmatter(raw);
     const name = fm.name || source.name || repo.split("/")[1];
-    const description = fm.description || source.description || "";
+    const description = fm.description || source.description || extractBodyFallbackDescription(raw);
     const meta = await repoMeta(repo);
     const key = `${repo}#${filePath}`;
     const category = forcedCategory || categorize(catRules, overrides, key, name, description);

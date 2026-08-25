@@ -2983,5 +2983,11 @@
   "claude-davila7-claude-code-templates-cli-tool-components-skills-enterprise-communication-brand-guidelines-skill-md": "Applies Anthropic's brand colors and typography to artifacts",
   "claude-davila7-claude-code-templates-cli-tool-components-skills-enterprise-communication-email-composer-skill-md": "Drafts professional business and customer emails",
   "claude-davila7-claude-code-templates-cli-tool-components-skills-enterprise-communication-excel-analysis-skill-md": "Analyzes spreadsheets and builds pivot tables and charts",
-  "claude-davila7-claude-code-templates-cli-tool-components-skills-enterprise-communication-internal-comms-skill-md": "Writes internal company communications like status updates and FAQs"
+  "claude-davila7-claude-code-templates-cli-tool-components-skills-enterprise-communication-internal-comms-skill-md": "Writes internal company communications like status updates and FAQs",
+  "claude-zubair-trabzada-ai-trading-claude-skills-trade-earnings-skill-md": "Analyzes historical earnings patterns and expected moves before reports",
+  "claude-zubair-trabzada-ai-trading-claude-skills-trade-portfolio-skill-md": "Analyzes portfolio allocation, risk, and income with rebalancing advice",
+  "claude-zubair-trabzada-ai-trading-claude-skills-trade-report-pdf-skill-md": "Compiles trade analysis files into a structured PDF report",
+  "claude-zubair-trabzada-ai-trading-claude-skills-trade-screen-skill-md": "Screens stocks by preset strategies or natural-language criteria",
+  "claude-zubair-trabzada-ai-trading-claude-skills-trade-watchlist-skill-md": "Builds and scores a dynamic stock watchlist with catalyst alerts",
+  "claude-zubair-trabzada-ai-trading-claude-trade-skill-md": "Orchestrates stock research, thesis-building, screening, and PDF reports"
 }

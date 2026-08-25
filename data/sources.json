@@ -248,6 +248,91 @@
       "path": "SKILL.md",
       "category": "translation",
       "notes": "Single-skill repo: verifies Korean technical-documentation translation quality"
+    },
+    {
+      "repo": "anthropics/financial-services",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "exclude": ["claude-for-msft-365-install/.claude/skills/verify/SKILL.md"],
+      "notes": "Official Anthropic financial-services skills (equity research, financial analysis, banking/insurance verticals, partner-built LSEG skills). Excludes one stray installer-verification skill."
+    },
+    {
+      "repo": "tradermonty/claude-trading-skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "excludePrefixes": ["examples/"],
+      "notes": "Dedicated equity/trading skill collection (screeners, technical analysis, backtesting, options). examples/ contains duplicate copies of the same skills bundled for a demo — excluded."
+    },
+    {
+      "repo": "OctagonAI/skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "SEC-filings/fundamentals-heavy stock research skills (10-K/10-Q/8-K analysis, earnings calls, analyst estimates); requires the Octagon MCP server"
+    },
+    {
+      "repo": "himself65/finance-skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "includePrefix": "plugins/market-analysis/",
+      "notes": "Mixed repo (also has unrelated social-media/UI plugins) — scoped to just its stock market-analysis plugin (valuation, correlation, earnings preview/recap, yfinance data)"
+    },
+    {
+      "repo": "himself65/finance-skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "includePrefix": "plugins/data-providers/",
+      "notes": "Same repo as above, second entry scoped to its finance data-provider connector plugin"
+    },
+    {
+      "repo": "staskh/trading_skills",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Interactive Brokers-centric options/portfolio toolkit (greeks, unusual options flow, stop-loss strategies)"
+    },
+    {
+      "repo": "yennanliu/InvestSkill",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Dedicated US-stock-analysis plugin (DCF, technical analysis, screener, 10-K digest, insider trading, options)"
+    },
+    {
+      "repo": "Bhala-Srinivash/nse-trading-skills",
+      "branch": "master",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Indian NSE/BSE equity technical-analysis skills (Fibonacci, RSI divergence, position sizing) via Groww MCP"
+    },
+    {
+      "repo": "zubair-trabzada/ai-trading-claude",
+      "branch": "main",
+      "tool": "claude",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "notes": "Multi-agent stock research toolkit (technical/fundamental/sentiment/risk scoring)"
+    },
+    {
+      "repo": "simonlin1212/global-stock-data",
+      "branch": "main",
+      "tool": "claude",
+      "type": "single",
+      "path": "SKILL.md",
+      "category": "stocks",
+      "notes": "Single-skill repo: US/HK stock data toolkit (CBOE options, FINRA short volume, SEC EDGAR)"
     }
   ]
 }
