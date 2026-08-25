@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const SITE_URL = "https://skymined.github.io/allskilltogether/";
+const SITE_URL = "https://skymined.github.io/awesome-claude-codex-skills/";
 
 function replaceBetween(content, startMarker, endMarker, replacement) {
   const start = content.indexOf(startMarker);

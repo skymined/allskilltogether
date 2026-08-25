@@ -21,7 +21,7 @@ const API = "https://api.github.com";
 function headers(extra = {}) {
   const h = {
     Accept: "application/vnd.github+json",
-    "User-Agent": "allskilltogether-skill-crawler",
+    "User-Agent": "awesome-claude-codex-skills-crawler",
     ...extra,
   };
   if (TOKEN) h.Authorization = `Bearer ${TOKEN}`;
@@ -56,7 +56,7 @@ async function gh(urlPath, extra, attempt = 0) {
 
 async function ghRaw(repo, branch, filePath, attempt = 0) {
   const url = `https://raw.githubusercontent.com/${repo}/${branch}/${filePath}`;
-  const res = await fetch(url, { headers: { "User-Agent": "allskilltogether-skill-crawler" } });
+  const res = await fetch(url, { headers: { "User-Agent": "awesome-claude-codex-skills-crawler" } });
   if (!res.ok) {
     if (res.status >= 500 && attempt < 2) {
       await sleep(1500 * (attempt + 1));

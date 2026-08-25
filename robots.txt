@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skymined.github.io/allskilltogether/sitemap.xml
+Sitemap: https://skymined.github.io/awesome-claude-codex-skills/sitemap.xml

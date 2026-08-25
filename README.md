@@ -2,12 +2,12 @@
 
 **A live, browsable directory of Claude and Codex Agent Skills — organized by category, updated every day, and combinable into ready-to-use bundles.**
 
-[![Live site](https://img.shields.io/badge/live%20site-skymined.github.io%2Fallskilltogether-c9603f?style=flat-square)](https://skymined.github.io/allskilltogether/)
-[![GitHub stars](https://img.shields.io/github/stars/skymined/allskilltogether?style=flat-square&color=f6c343)](https://github.com/skymined/allskilltogether/stargazers)
-[![Update skills data](https://img.shields.io/github/actions/workflow/status/skymined/allskilltogether/update-skills.yml?style=flat-square&label=daily%20sync)](https://github.com/skymined/allskilltogether/actions/workflows/update-skills.yml)
+[![Live site](https://img.shields.io/badge/live%20site-skymined.github.io%2Fawesome--claude--codex--skills-c9603f?style=flat-square)](https://skymined.github.io/awesome-claude-codex-skills/)
+[![GitHub stars](https://img.shields.io/github/stars/skymined/awesome-claude-codex-skills?style=flat-square&color=f6c343)](https://github.com/skymined/awesome-claude-codex-skills/stargazers)
+[![Update skills data](https://img.shields.io/github/actions/workflow/status/skymined/awesome-claude-codex-skills/update-skills.yml?style=flat-square&label=daily%20sync)](https://github.com/skymined/awesome-claude-codex-skills/actions/workflows/update-skills.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 
-### 👉 [**Open the site**](https://skymined.github.io/allskilltogether/) · [Browse recommended combos](https://skymined.github.io/allskilltogether/combos.html)
+### 👉 [**Open the site**](https://skymined.github.io/awesome-claude-codex-skills/) · [Browse recommended combos](https://skymined.github.io/awesome-claude-codex-skills/combos.html)
 
 ![Screenshot of All Skill Together](docs/screenshot.png)
 
@@ -22,33 +22,33 @@ If you find this useful, **a star helps other people find it** — this is a sma
 <!-- CATEGORY_TABLE:START -->
 | Category | Skills | |
 | --- | ---: | --- |
-| 💻 Coding & Dev | 663 | [Browse →](https://skymined.github.io/allskilltogether/?category=coding) |
-| ✨ Other | 523 | [Browse →](https://skymined.github.io/allskilltogether/?category=other) |
-| 🎨 Design | 271 | [Browse →](https://skymined.github.io/allskilltogether/?category=design) |
-| ⚡ Productivity | 225 | [Browse →](https://skymined.github.io/allskilltogether/?category=productivity) |
-| 🛠️ DevOps & Infra | 178 | [Browse →](https://skymined.github.io/allskilltogether/?category=devops) |
-| 📊 Data & Analytics | 150 | [Browse →](https://skymined.github.io/allskilltogether/?category=data) |
-| 🤖 AI & Agent Dev | 137 | [Browse →](https://skymined.github.io/allskilltogether/?category=ai-agents) |
-| ⚖️ Legal & Compliance | 106 | [Browse →](https://skymined.github.io/allskilltogether/?category=legal) |
-| 🧬 Science & Research | 89 | [Browse →](https://skymined.github.io/allskilltogether/?category=science) |
-| ✍️ Writing | 88 | [Browse →](https://skymined.github.io/allskilltogether/?category=writing) |
-| 💼 Business & Finance | 88 | [Browse →](https://skymined.github.io/allskilltogether/?category=business) |
-| 📄 Docs & Office | 69 | [Browse →](https://skymined.github.io/allskilltogether/?category=docs) |
-| 📣 Marketing | 64 | [Browse →](https://skymined.github.io/allskilltogether/?category=marketing) |
-| 🔍 Research & Learning | 62 | [Browse →](https://skymined.github.io/allskilltogether/?category=research) |
-| 🤝 Sales | 59 | [Browse →](https://skymined.github.io/allskilltogether/?category=sales) |
-| 🗂️ Project Management | 49 | [Browse →](https://skymined.github.io/allskilltogether/?category=pm) |
-| 🔎 SEO | 39 | [Browse →](https://skymined.github.io/allskilltogether/?category=seo) |
-| 💬 Communication | 28 | [Browse →](https://skymined.github.io/allskilltogether/?category=communication) |
-| 🌐 Translation | 22 | [Browse →](https://skymined.github.io/allskilltogether/?category=translation) |
-| 🎓 Education | 20 | [Browse →](https://skymined.github.io/allskilltogether/?category=education) |
-| 🎧 Customer Support | 11 | [Browse →](https://skymined.github.io/allskilltogether/?category=support) |
+| 💻 Coding & Dev | 663 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=coding) |
+| ✨ Other | 523 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=other) |
+| 🎨 Design | 271 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
+| ⚡ Productivity | 225 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=productivity) |
+| 🛠️ DevOps & Infra | 178 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops) |
+| 📊 Data & Analytics | 150 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=data) |
+| 🤖 AI & Agent Dev | 137 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=ai-agents) |
+| ⚖️ Legal & Compliance | 106 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=legal) |
+| 🧬 Science & Research | 89 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science) |
+| ✍️ Writing | 88 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing) |
+| 💼 Business & Finance | 88 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=business) |
+| 📄 Docs & Office | 69 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs) |
+| 📣 Marketing | 64 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=marketing) |
+| 🔍 Research & Learning | 62 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=research) |
+| 🤝 Sales | 59 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=sales) |
+| 🗂️ Project Management | 49 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=pm) |
+| 🔎 SEO | 39 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=seo) |
+| 💬 Communication | 28 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=communication) |
+| 🌐 Translation | 22 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=translation) |
+| 🎓 Education | 20 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=education) |
+| 🎧 Customer Support | 11 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=support) |
 <!-- CATEGORY_TABLE:END -->
 
 ## What makes this different from just another list
 
 - **It's a real, working site, not a markdown list.** Every card fetches the actual `SKILL.md` straight from GitHub raw content and renders it in place — you're always looking at the current upstream file, never a stale copy.
-- **Recommended combos are sourced, not invented.** The [combos page](https://skymined.github.io/allskilltogether/combos.html) only includes skill bundles traceable to something real: an official plugin manifest, a repo's own README, or a specific community post — each card links to where it came from.
+- **Recommended combos are sourced, not invented.** The [combos page](https://skymined.github.io/awesome-claude-codex-skills/combos.html) only includes skill bundles traceable to something real: an official plugin manifest, a repo's own README, or a specific community post — each card links to where it came from.
 - **You can build your own bundle.** Pick skills with the `+` button, then copy or download them merged into one file from the combo tray.
 - **It updates itself.** GitHub Actions rescans every source repo daily and commits whatever changed — new skills, updated descriptions, refreshed dates — with no manual step.
 
