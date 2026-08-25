@@ -93,24 +93,24 @@ button { font-family: inherit; }
 .pill-muted { color: var(--text-2); font-weight: 500; }
 .pill-link { text-decoration: none; color: var(--text); transition: border-color .15s, color .15s; }
 .pill-link:hover { border-color: var(--accent); color: var(--accent); }
+.pill-accent { background: var(--claude-bg); border-color: transparent; color: var(--claude-accent); }
+.pill-accent:hover { border-color: var(--claude-accent); color: var(--claude-accent); filter: brightness(0.95); }
 
-/* Recommended combos --------------------------------------------------- */
-.combos-section { margin: 30px 0 6px; }
-.combos-head h2 { margin: 0 0 4px; font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
-.combos-sub { margin: 0 0 14px; color: var(--text-3); font-size: 12.5px; }
-.combos-row {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-  scrollbar-width: thin;
+/* Recommended combos page ------------------------------------------------ */
+.combos-page-intro { margin: 30px 0 24px; max-width: 720px; }
+.combos-page-intro h2 { margin: 0 0 10px; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+.combos-page-intro p { margin: 0; color: var(--text-2); font-size: 14.5px; line-height: 1.65; }
+.combos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  padding-bottom: 40px;
 }
 .combo-card {
-  flex: 0 0 300px;
   background: linear-gradient(165deg, var(--surface), var(--surface-2));
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;

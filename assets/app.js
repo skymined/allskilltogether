@@ -236,6 +236,7 @@
 
   function renderBoard() {
     const board = el("#board");
+    if (!board) return; // no-op on pages without a skill board (e.g. combos.html)
     const list = getFiltered();
     board.innerHTML = "";
     const frag = document.createDocumentFragment();
@@ -394,19 +395,20 @@
   }
 
   function renderCombos(combos) {
-    const section = el("#combos-section");
-    const row = el("#combos-row");
+    const row = el("#combos-grid");
+    if (!row) return;
     row.innerHTML = "";
 
     const usable = combos
       .map((c) => ({ ...c, matched: matchSkillsByIds(c.skill_ids || []) }))
       .filter((c) => c.matched.length >= 2);
 
+    const empty = el("#combos-empty");
     if (usable.length === 0) {
-      section.hidden = true;
+      if (empty) empty.hidden = false;
       return;
     }
-    section.hidden = false;
+    if (empty) empty.hidden = true;
 
     for (const combo of usable) {
       const card = document.createElement("article");
@@ -460,19 +462,25 @@
     });
 
     let debounce;
-    el("#search").addEventListener("input", (e) => {
-      clearTimeout(debounce);
-      const v = e.target.value;
-      debounce = setTimeout(() => {
-        state.query = v;
-        renderBoard();
-      }, 120);
-    });
+    const searchEl = el("#search");
+    if (searchEl) {
+      searchEl.addEventListener("input", (e) => {
+        clearTimeout(debounce);
+        const v = e.target.value;
+        debounce = setTimeout(() => {
+          state.query = v;
+          renderBoard();
+        }, 120);
+      });
+    }
 
-    el("#sort").addEventListener("change", (e) => {
-      state.sort = e.target.value;
-      renderBoard();
-    });
+    const sortEl = el("#sort");
+    if (sortEl) {
+      sortEl.addEventListener("change", (e) => {
+        state.sort = e.target.value;
+        renderBoard();
+      });
+    }
 
     els("[data-close-drawer]").forEach((n) => n.addEventListener("click", closeDrawer));
     els("[data-close-modal]").forEach((n) => n.addEventListener("click", closeCombineModal));
@@ -535,21 +543,41 @@
     pill.textContent = "🔄 as of " + d.toLocaleString("en-US", { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
   }
 
+  // Lets external links (e.g. the README's per-category links) deep-link
+  // straight into a filtered view: index.html?category=writing
+  function applyUrlParams() {
+    const params = new URLSearchParams(location.search);
+    const cat = params.get("category");
+    if (cat) state.activeCats.add(cat);
+    const q = params.get("q");
+    if (q) {
+      state.query = q;
+      const searchEl = el("#search");
+      if (searchEl) searchEl.value = q;
+    }
+  }
+
   async function init() {
     loadTray();
     wireControls();
     try {
       await loadData();
     } catch (e) {
-      el("#board").innerHTML = `<p class="empty-state">Couldn't load skill data.</p>`;
+      const board = el("#board");
+      if (board) board.innerHTML = `<p class="empty-state">Couldn't load skill data.</p>`;
       console.error(e);
       return;
     }
     renderLastUpdated();
-    renderChips();
-    renderBoard();
+    if (el("#board")) {
+      applyUrlParams();
+      renderChips();
+      renderBoard();
+    }
     updateTrayUI();
-    loadCombos().then(renderCombos);
+    if (el("#combos-grid")) {
+      loadCombos().then(renderCombos);
+    }
   }
 
   init();

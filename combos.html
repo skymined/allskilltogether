@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>All Skill Together — Claude &amp; Codex Skill Directory</title>
-<meta name="description" content="Browse Claude and Codex Agent Skills by category, and combine the ones you pick into one bundle." />
+<title>Recommended Combos — All Skill Together</title>
+<meta name="description" content="Skill combos that are genuinely bundled or discussed together in the Claude & Codex skill community — sourced, not invented." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧩</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,49 +19,33 @@
       <span class="brand-mark">🧩</span>
       <div>
         <h1>All Skill Together</h1>
-        <p class="tagline">A Claude &amp; Codex Agent Skill archive — browse by category, pick, and combine</p>
+        <p class="tagline">Recommended combos — skills that genuinely go together</p>
       </div>
     </div>
     <div class="header-meta">
       <span id="last-updated" class="pill pill-muted">Loading…</span>
-      <a class="pill pill-link pill-accent" href="combos.html">🔥 Recommended Combos</a>
-      <a class="pill pill-link" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Claude official ↗</a>
-      <a class="pill pill-link" href="https://github.com/openai/skills" target="_blank" rel="noopener">Codex official ↗</a>
+      <a class="pill pill-link pill-accent" href="index.html">← All Skills</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section class="controls" aria-label="Filter and search">
-    <div class="search-row">
-      <input id="search" type="search" placeholder="Search by name, description, or repo…" aria-label="Search skills" />
-      <div class="tool-toggle" role="group" aria-label="Tool filter">
-        <button class="tool-btn active" data-tool="all">All</button>
-        <button class="tool-btn" data-tool="claude">Claude</button>
-        <button class="tool-btn" data-tool="codex">Codex</button>
-      </div>
-      <select id="sort" aria-label="Sort by">
-        <option value="updated">Recently updated</option>
-        <option value="name">Name</option>
-        <option value="stars">Stars</option>
-      </select>
-    </div>
-    <div id="category-chips" class="chip-row" role="group" aria-label="Category filter"></div>
+  <section class="combos-page-intro">
+    <h2>🔥 Recommended combos</h2>
+    <p>Skills that are genuinely bundled or discussed together — never made up. Each combo below is either an official plugin bundle from the source repo, a workflow the repo's own README recommends, or a specific pairing described in a community post. Every card links back to its source so you can check for yourself.</p>
   </section>
 
-  <p id="result-count" class="result-count"></p>
+  <section id="combos-grid" class="combos-grid" aria-label="Recommended combos"></section>
 
-  <section id="board" class="board" aria-live="polite"></section>
-
-  <p id="empty-state" class="empty-state" hidden>No skills match these filters. Try adjusting your search or filters.</p>
+  <p id="combos-empty" class="empty-state" hidden>Couldn't load combos right now — try refreshing.</p>
 
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>GitHub Actions automatically rescans the source repos every day to refresh skills and update dates.
-      Want to add a new source? Send a PR to <a href="https://github.com/skymined/allskilltogether/blob/main/data/sources.json" target="_blank" rel="noopener">data/sources.json</a>.</p>
+    <p>Want to suggest a combo? It needs a real source — an upstream plugin manifest, a repo README, or a specific community post.
+      Send a PR to <a href="https://github.com/skymined/allskilltogether/blob/main/data/combos.json" target="_blank" rel="noopener">data/combos.json</a>.</p>
   </div>
 </footer>
 
