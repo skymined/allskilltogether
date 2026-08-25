@@ -1,24 +1,27 @@
 # All Skill Together 🧩
 
-Claude와 Codex의 Agent Skill을 한곳에 모아, **분야별로 탐색**하고 **원하는 것을 골라 바로 조합**해볼 수 있는 정적 웹사이트입니다. GitHub Pages로 배포되며, GitHub Actions가 매일 소스 저장소를 다시 스캔해 최신 스킬 목록과 업데이트 날짜를 자동으로 반영합니다.
+A static website that aggregates Claude and Codex Agent Skills in one place — **browse by category**, and **pick a few and combine them** on the spot. Deployed on GitHub Pages; GitHub Actions rescans the source repos every day and automatically refreshes the skill list and update dates.
 
-## 어떻게 동작하나요
+## How it works
 
 ```
-data/sources.json   → 스캔할 GitHub 저장소 목록 (Claude / Codex)
-data/categories.json→ 분야(카테고리) 정의 + 자동 분류 키워드 규칙 + 수동 오버라이드
-scripts/fetch-skills.mjs → 저장소를 스캔해 SKILL.md(등)을 파싱하고 data/skills.json 생성
-data/skills.json    → 웹사이트가 실제로 읽는 최종 데이터 (자동 생성됨, 직접 수정 X)
-index.html / assets/*.js,css → 정적 프론트엔드 (프레임워크 없음, 브라우저에서 바로 실행)
-.github/workflows/update-skills.yml → 매일 자동 재수집 + 변경 시 자동 커밋
+data/sources.json    → GitHub repos to scan (Claude / Codex)
+data/categories.json → category definitions + keyword-based auto-classification + manual overrides
+data/summaries.json  → curated one-line card summaries, keyed by skill id
+scripts/fetch-skills.mjs → scans the repos, parses SKILL.md files, writes data/skills.json
+data/skills.json     → the final data the website actually reads (auto-generated — don't edit by hand)
+data/combos.json     → curated "recommended combo" bundles shown at the top of the page
+index.html / assets/*.js,css → static frontend (no framework, runs straight in the browser)
+.github/workflows/update-skills.yml → daily rescan + auto-commit on change
 ```
 
-- 각 스킬 카드를 클릭하면 원본 `SKILL.md`를 **GitHub raw content에서 직접 가져와** 그 자리에서 렌더링합니다 (사이트에 내용을 복제해두지 않기 때문에 항상 최신 원문입니다).
-- 카드의 `+` 버튼으로 여러 스킬을 **조합함(🧺)**에 담고, 하나의 마크다운으로 합쳐서 **복사** 또는 **다운로드**할 수 있습니다. 새 스킬을 만들거나 여러 스킬을 함께 검토할 때 참고 자료로 쓰기 좋습니다.
+- Clicking a skill card fetches the original `SKILL.md` **directly from GitHub raw content** and renders it on the spot (the site never mirrors the content, so it's always the current upstream text).
+- Use each card's `+` button to add skills to the **combo tray (🧺)**, then **copy** or **download** them merged into one markdown file — handy when building a new skill or reviewing several at once.
+- The **Recommended combos** row at the top surfaces skills that are genuinely bundled together upstream (an official plugin manifest) or discussed together in the community — each card links back to its source so nothing is presented as "trending" without evidence.
 
-## 새 스킬 저장소 추가하기
+## Adding a new skill source
 
-`data/sources.json`의 `repos` 배열에 항목을 추가하세요.
+Add an entry to the `repos` array in `data/sources.json`.
 
 ```json
 {
@@ -30,24 +33,24 @@ index.html / assets/*.js,css → 정적 프론트엔드 (프레임워크 없음,
 }
 ```
 
-- `type: "collection"` — 저장소 전체를 훑어서 파일명이 `match`에 포함된 파일을 모두 스킬로 등록합니다 (모노레포용).
-- `type: "single"` — 저장소 하나가 스킬 하나일 때 씁니다. `"path"`로 정확한 파일 경로를 지정하고, 필요하면 `"category"`로 분류를 직접 지정할 수 있습니다.
+- `type: "collection"` — walks the whole repo and registers every file whose name is in `match` as a skill (for monorepos).
+- `type: "single"` — for a repo that holds exactly one skill. Set `"path"` to the exact file, and optionally `"category"` to force its classification.
 
-카테고리 자동 분류가 마음에 안 들면 `data/categories.json`의 `overrides`에 `"owner/repo#path/to/SKILL.md": "category-id"` 형식으로 추가하세요.
+If the automatic categorization gets something wrong, add an override to `data/categories.json` under `overrides`, keyed as `"owner/repo#path/to/SKILL.md": "category-id"`.
 
-PR을 보내면 병합 후 다음 스케줄(매일 03:17 UTC) 또는 워크플로 수동 실행(`workflow_dispatch`) 때 자동으로 반영됩니다.
+Once a PR merges, changes are picked up automatically at the next schedule (daily, 03:17 UTC) or via a manual `workflow_dispatch` run.
 
-## 로컬 개발
+## Local development
 
 ```bash
-# 데이터 다시 수집 (선택 사항 — GITHUB_TOKEN 있으면 API 제한 완화)
+# Re-scan sources (optional — a GITHUB_TOKEN raises the API rate limit)
 GITHUB_TOKEN=$(gh auth token) node scripts/fetch-skills.mjs
 
-# 정적 서버로 미리보기 (fetch()가 파일 프로토콜에서 막히므로 서버 필요)
+# Preview with a static server (fetch() is blocked on file://, so a server is required)
 npx serve .
-# 또는: python -m http.server 8080
+# or: python -m http.server 8080
 ```
 
-## 배포
+## Deployment
 
-GitHub Pages를 저장소 설정에서 `main` 브랜치 `/ (root)`로 지정하면 별도 빌드 없이 그대로 서빙됩니다. `.nojekyll` 파일이 포함되어 있어 Jekyll 처리 없이 정적 파일 그대로 배포됩니다.
+Point GitHub Pages at the `main` branch, `/ (root)` in the repo settings — no build step needed. A `.nojekyll` file is included so the static files are served as-is, without Jekyll processing.

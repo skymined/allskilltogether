@@ -39,10 +39,21 @@
     state.generatedAt = data.generated_at || null;
   }
 
+  async function loadCombos() {
+    try {
+      const res = await fetch("data/combos.json", { cache: "no-store" });
+      if (!res.ok) return [];
+      const data = await res.json();
+      return data.combos || [];
+    } catch {
+      return [];
+    }
+  }
+
   async function fetchContent(skill) {
     if (contentCache.has(skill.raw_url)) return contentCache.get(skill.raw_url);
     const res = await fetch(skill.raw_url);
-    if (!res.ok) throw new Error(`콘텐츠를 불러오지 못했습니다 (${res.status})`);
+    if (!res.ok) throw new Error(`Couldn't load content (${res.status})`);
     const text = await res.text();
     contentCache.set(skill.raw_url, text);
     return text;
@@ -124,18 +135,22 @@
 
   // ---- formatting -----------------------------------------------------
   function formatDate(iso) {
-    if (!iso) return "날짜 미상";
+    if (!iso) return "Date unknown";
     const d = new Date(iso);
-    if (isNaN(d)) return "날짜 미상";
+    if (isNaN(d)) return "Date unknown";
     const days = Math.floor((Date.now() - d.getTime()) / 86400000);
-    if (days <= 0) return "오늘 업데이트";
-    if (days === 1) return "어제 업데이트";
-    if (days < 30) return `${days}일 전 업데이트`;
-    return d.toLocaleDateString("ko-KR", { year: "numeric", month: "short", day: "numeric" }) + " 업데이트";
+    if (days <= 0) return "Updated today";
+    if (days === 1) return "Updated yesterday";
+    if (days < 30) return `Updated ${days}d ago`;
+    return "Updated " + d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
   }
 
   function categoryMeta(id) {
-    return state.categories.find((c) => c.id === id) || { id, ko: id, icon: "✨" };
+    return state.categories.find((c) => c.id === id) || { id, en: id, icon: "✨" };
+  }
+
+  function cardDesc(skill) {
+    return skill.summary || skill.description || "(no description)";
   }
 
   // ---- rendering: chips -------------------------------------------------
@@ -147,7 +162,7 @@
       if (count === 0) continue;
       const btn = document.createElement("button");
       btn.className = "chip" + (state.activeCats.has(cat.id) ? " active" : "");
-      btn.textContent = `${cat.icon} ${cat.ko} (${count})`;
+      btn.textContent = `${cat.icon} ${cat.en} (${count})`;
       btn.addEventListener("click", () => {
         if (state.activeCats.has(cat.id)) state.activeCats.delete(cat.id);
         else state.activeCats.add(cat.id);
@@ -165,7 +180,7 @@
       if (state.tool !== "all" && s.tool !== state.tool) return false;
       if (state.activeCats.size > 0 && !state.activeCats.has(s.category)) return false;
       if (q) {
-        const hay = `${s.name} ${s.description} ${s.repo}`.toLowerCase();
+        const hay = `${s.name} ${s.description} ${s.summary || ""} ${s.repo}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -189,9 +204,9 @@
       <div class="card-top">
         <div class="badge-row">
           <span class="badge badge-${skill.tool}">${skill.tool}</span>
-          <span class="badge badge-cat">${cat.icon} ${cat.ko}</span>
+          <span class="badge badge-cat">${cat.icon} ${cat.en}</span>
         </div>
-        <button class="add-btn${added ? " added" : ""}" title="조합함에 추가/제거" aria-label="조합함에 추가">${added ? "✓" : "+"}</button>
+        <button class="add-btn${added ? " added" : ""}" title="Add/remove from combo tray" aria-label="Add to combo tray">${added ? "✓" : "+"}</button>
       </div>
       <h3></h3>
       <p class="desc"></p>
@@ -201,7 +216,7 @@
       </div>
     `;
     el("h3", card).textContent = skill.name;
-    el(".desc", card).textContent = skill.description || "(설명 없음)";
+    el(".desc", card).textContent = cardDesc(skill);
     el(".repo", card).textContent = skill.repo;
     el(".updated", card).textContent = formatDate(skill.updated_at);
 
@@ -212,7 +227,7 @@
       const isAdded = state.tray.has(skill.id);
       btn.classList.toggle("added", isAdded);
       btn.textContent = isAdded ? "✓" : "+";
-      btn.setAttribute("aria-label", isAdded ? "조합함에서 제거" : "조합함에 추가");
+      btn.setAttribute("aria-label", isAdded ? "Remove from combo tray" : "Add to combo tray");
     });
 
     card.addEventListener("click", () => openDrawer(skill));
@@ -227,7 +242,7 @@
     for (const skill of list) frag.appendChild(cardTemplate(skill));
     board.appendChild(frag);
 
-    el("#result-count").textContent = `${list.length}개의 스킬`;
+    el("#result-count").textContent = `${list.length} skill${list.length === 1 ? "" : "s"}`;
     el("#empty-state").hidden = list.length !== 0;
   }
 
@@ -240,24 +255,24 @@
     body.innerHTML = `
       <div class="detail-badges">
         <span class="badge badge-${skill.tool}">${skill.tool}</span>
-        <span class="badge badge-cat">${cat.icon} ${cat.ko}</span>
+        <span class="badge badge-cat">${cat.icon} ${cat.en}</span>
       </div>
       <h2 class="detail-title" id="drawer-title"></h2>
       <p class="detail-desc"></p>
       <dl class="detail-meta">
-        <dt>저장소</dt><dd></dd>
-        <dt>경로</dt><dd></dd>
-        <dt>업데이트</dt><dd></dd>
-        <dt>스타</dt><dd></dd>
+        <dt>Repo</dt><dd></dd>
+        <dt>Path</dt><dd></dd>
+        <dt>Updated</dt><dd></dd>
+        <dt>Stars</dt><dd></dd>
       </dl>
       <div class="detail-actions">
-        <a class="btn" target="_blank" rel="noopener" href="${escapeHtml(skill.html_url)}">GitHub에서 원본 보기 ↗</a>
-        <button class="btn btn-primary" id="drawer-add">${added ? "조합함에서 제거" : "🧺 조합함에 추가"}</button>
+        <a class="btn" target="_blank" rel="noopener" href="${escapeHtml(skill.html_url)}">View source on GitHub ↗</a>
+        <button class="btn btn-primary" id="drawer-add">${added ? "Remove from combo tray" : "🧺 Add to combo tray"}</button>
       </div>
-      <div class="detail-body"><p class="detail-loading">스킬 내용을 불러오는 중…</p></div>
+      <div class="detail-body"><p class="detail-loading">Loading skill content…</p></div>
     `;
     el(".detail-title", body).textContent = skill.name;
-    el(".detail-desc", body).textContent = skill.description || "(설명 없음)";
+    el(".detail-desc", body).textContent = cardDesc(skill);
     const dds = els(".detail-meta dd", body);
     dds[0].textContent = skill.repo;
     dds[1].textContent = skill.path;
@@ -268,7 +283,7 @@
     addBtn.addEventListener("click", () => {
       toggleTray(skill.id);
       const isAdded = state.tray.has(skill.id);
-      addBtn.textContent = isAdded ? "조합함에서 제거" : "🧺 조합함에 추가";
+      addBtn.textContent = isAdded ? "Remove from combo tray" : "🧺 Add to combo tray";
       renderBoard();
     });
 
@@ -279,7 +294,7 @@
         el(".detail-body", body).innerHTML = renderMarkdownLite(md);
       })
       .catch((err) => {
-        el(".detail-body", body).innerHTML = `<p class="detail-loading">내용을 불러오지 못했습니다: ${escapeHtml(err.message)}. GitHub 링크로 확인해주세요.</p>`;
+        el(".detail-body", body).innerHTML = `<p class="detail-loading">Couldn't load content: ${escapeHtml(err.message)}. Check the GitHub link instead.</p>`;
       });
   }
 
@@ -293,6 +308,18 @@
     else state.tray.add(id);
     saveTray();
     updateTrayUI();
+  }
+
+  function addManyToTray(ids) {
+    let anyAdded = false;
+    for (const id of ids) {
+      if (!state.skills.some((s) => s.id === id)) continue;
+      if (!state.tray.has(id)) anyAdded = true;
+      state.tray.add(id);
+    }
+    saveTray();
+    updateTrayUI();
+    return anyAdded;
   }
 
   function updateTrayUI() {
@@ -310,7 +337,7 @@
       .filter(Boolean);
 
     if (items.length === 0) {
-      list.innerHTML = `<p class="combine-empty">아직 담은 스킬이 없어요. 카드의 + 버튼으로 담아보세요.</p>`;
+      list.innerHTML = `<p class="combine-empty">Nothing in your tray yet. Use the + button on any card to add one.</p>`;
       return;
     }
 
@@ -322,7 +349,7 @@
           <div class="ci-name">${escapeHtml(skill.name)} <span class="badge badge-${skill.tool}" style="margin-left:6px">${skill.tool}</span></div>
           <div class="ci-sub">${escapeHtml(skill.repo)}</div>
         </div>
-        <button aria-label="제거">✕</button>
+        <button aria-label="Remove">✕</button>
       `;
       el("button", row).addEventListener("click", () => {
         toggleTray(skill.id);
@@ -343,12 +370,12 @@
         try {
           content = await fetchContent(skill);
         } catch {
-          content = "(내용을 불러오지 못했습니다 — " + skill.html_url + " 참고)";
+          content = "(Couldn't load content — see " + skill.html_url + ")";
         }
-        return `\n\n---\n\n# ${skill.name} (${skill.tool})\n출처: ${skill.repo}/${skill.path}\n${skill.html_url}\n\n${content}`;
+        return `\n\n---\n\n# ${skill.name} (${skill.tool})\nSource: ${skill.repo}/${skill.path}\n${skill.html_url}\n\n${content}`;
       })
     );
-    return `# All Skill Together — 조합된 스킬 모음\n생성: ${new Date().toISOString()}\n${parts.join("")}`.trim();
+    return `# All Skill Together — combined skill bundle\nGenerated: ${new Date().toISOString()}\n${parts.join("")}`.trim();
   }
 
   function openCombineModal() {
@@ -357,6 +384,69 @@
   }
   function closeCombineModal() {
     el("#combine-modal").setAttribute("aria-hidden", "true");
+  }
+
+  // ---- recommended combos -------------------------------------------------
+  function matchSkillsByName(names) {
+    const lowerNames = names.map((n) => n.toLowerCase());
+    return lowerNames
+      .map((n) => state.skills.find((s) => s.name.toLowerCase() === n))
+      .filter(Boolean);
+  }
+
+  function renderCombos(combos) {
+    const section = el("#combos-section");
+    const row = el("#combos-row");
+    row.innerHTML = "";
+
+    const usable = combos
+      .map((c) => ({ ...c, matched: matchSkillsByName(c.skill_names || []) }))
+      .filter((c) => c.matched.length >= 2);
+
+    if (usable.length === 0) {
+      section.hidden = true;
+      return;
+    }
+    section.hidden = false;
+
+    for (const combo of usable) {
+      const card = document.createElement("article");
+      card.className = "combo-card";
+      const originLabel =
+        combo.origin === "official_plugin_bundle"
+          ? "Official bundle"
+          : combo.origin === "repo_readme_recommendation"
+          ? "From a repo README"
+          : "Community-discussed";
+      card.innerHTML = `
+        <div class="combo-top">
+          <span class="combo-origin">${escapeHtml(originLabel)}</span>
+        </div>
+        <h3></h3>
+        <p class="combo-use-case"></p>
+        <div class="combo-skills"></div>
+        <div class="combo-actions">
+          <button class="btn btn-primary combo-add">🧺 Add all to tray</button>
+          ${combo.source_url ? `<a class="btn btn-ghost" target="_blank" rel="noopener" href="${escapeHtml(combo.source_url)}">Source ↗</a>` : ""}
+        </div>
+      `;
+      el("h3", card).textContent = combo.title;
+      el(".combo-use-case", card).textContent = combo.use_case;
+      const skillsWrap = el(".combo-skills", card);
+      for (const s of combo.matched) {
+        const chip = document.createElement("span");
+        chip.className = "combo-skill-chip";
+        chip.textContent = s.name;
+        chip.addEventListener("click", () => openDrawer(s));
+        skillsWrap.appendChild(chip);
+      }
+      el(".combo-add", card).addEventListener("click", () => {
+        addManyToTray(combo.matched.map((s) => s.id));
+        renderBoard();
+        openCombineModal();
+      });
+      row.appendChild(card);
+    }
   }
 
   // ---- wiring -------------------------------------------------------------
@@ -407,13 +497,13 @@
     el("#combine-copy").addEventListener("click", async (e) => {
       const btn = e.currentTarget;
       const original = btn.textContent;
-      btn.textContent = "불러오는 중…";
+      btn.textContent = "Loading…";
       try {
         const text = await buildCombinedText();
         await navigator.clipboard.writeText(text);
-        btn.textContent = "복사됨 ✓";
+        btn.textContent = "Copied ✓";
       } catch {
-        btn.textContent = "복사 실패";
+        btn.textContent = "Copy failed";
       }
       setTimeout(() => (btn.textContent = original), 1600);
     });
@@ -421,7 +511,7 @@
     el("#combine-download").addEventListener("click", async (e) => {
       const btn = e.currentTarget;
       const original = btn.textContent;
-      btn.textContent = "준비 중…";
+      btn.textContent = "Preparing…";
       const text = await buildCombinedText();
       const blob = new Blob([text], { type: "text/markdown;charset=utf-8" });
       const url = URL.createObjectURL(blob);
@@ -439,11 +529,11 @@
   function renderLastUpdated() {
     const pill = el("#last-updated");
     if (!state.generatedAt) {
-      pill.textContent = "업데이트 정보 없음";
+      pill.textContent = "No update info";
       return;
     }
     const d = new Date(state.generatedAt);
-    pill.textContent = "🔄 " + d.toLocaleString("ko-KR", { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }) + " 기준";
+    pill.textContent = "🔄 as of " + d.toLocaleString("en-US", { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
   }
 
   async function init() {
@@ -452,7 +542,7 @@
     try {
       await loadData();
     } catch (e) {
-      el("#board").innerHTML = `<p class="empty-state">스킬 데이터를 불러오지 못했습니다.</p>`;
+      el("#board").innerHTML = `<p class="empty-state">Couldn't load skill data.</p>`;
       console.error(e);
       return;
     }
@@ -460,6 +550,7 @@
     renderChips();
     renderBoard();
     updateTrayUI();
+    loadCombos().then(renderCombos);
   }
 
   init();

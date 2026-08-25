@@ -110,6 +110,24 @@ function parseFrontmatter(md) {
   return out;
 }
 
+// Cheap fallback for skills that don't have a curated one-liner yet in
+// data/summaries.json (e.g. brand-new skills from a scheduled scan, before
+// a human/Claude has run the summarization pass). Strips the common
+// "Use this skill when..." framing and takes the first sentence.
+function heuristicSummary(description) {
+  if (!description) return "";
+  let s = description
+    .replace(/^Use this skill (whenever|when)\s+(the user wants to\s+)?/i, "")
+    .replace(/^Use (whenever|when)\s+(the user|someone)\s+wants to\s+/i, "")
+    .replace(/^This skill (helps you |allows you to )?/i, "")
+    .trim();
+  const firstSentence = s.split(/(?<=[.!?])\s/)[0] || s;
+  s = firstSentence.replace(/[.!?]+$/, "").trim();
+  if (s.length > 0) s = s[0].toUpperCase() + s.slice(1);
+  if (s.length > 90) s = s.slice(0, 87).trim() + "…";
+  return s;
+}
+
 function slugify(s) {
   return s
     .toLowerCase()
@@ -276,6 +294,16 @@ async function main() {
     // first run, no existing file yet
   }
 
+  // Curated one-liners for skill cards (see scripts/README or the
+  // summarize-skill-cards workflow). Falls back to a heuristic trim of the
+  // raw frontmatter description for anything not yet curated.
+  let summaries = {};
+  try {
+    summaries = JSON.parse(await readFile(path.join(DATA_DIR, "summaries.json"), "utf8"));
+  } catch {
+    // no curated summaries yet
+  }
+
   const allResults = [];
   for (const source of sources.repos) {
     try {
@@ -294,11 +322,13 @@ async function main() {
   const curated = (existing.skills || []).filter((s) => s.curated);
   const byId = new Map();
   for (const s of [...curated, ...allResults]) byId.set(s.id, s);
-  const merged = [...byId.values()].sort((a, b) => {
-    const da = a.updated_at ? Date.parse(a.updated_at) : 0;
-    const db = b.updated_at ? Date.parse(b.updated_at) : 0;
-    return db - da;
-  });
+  const merged = [...byId.values()]
+    .map((s) => ({ ...s, summary: summaries[s.id] || heuristicSummary(s.description) }))
+    .sort((a, b) => {
+      const da = a.updated_at ? Date.parse(a.updated_at) : 0;
+      const db = b.updated_at ? Date.parse(b.updated_at) : 0;
+      return db - da;
+    });
 
   // Only bump generated_at when the actual content changed — otherwise a
   // no-op scheduled run would still produce a commit every day just from
