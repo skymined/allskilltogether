@@ -271,6 +271,24 @@
         { "subcategory": "roadmapping",    "keywords": ["roadmap", "product discovery"] },
         { "subcategory": "reporting",      "keywords": ["status report", "executive report", "progress report"] }
       ]
+    },
+    "other": {
+      "list": [
+        { "id": "cloud-saas-integrations", "ko": "클라우드·SaaS 연동",   "en": "Cloud & SaaS Integrations" },
+        { "id": "korean-local-services",   "ko": "한국 로컬 서비스",     "en": "Korean Local Services" },
+        { "id": "career-job-search",       "ko": "커리어·구직",          "en": "Career & Job Search" },
+        { "id": "finance-deal-ops",        "ko": "M&A·펀드 운영",        "en": "M&A & Fund Ops" },
+        { "id": "web3-blockchain",         "ko": "웹3·블록체인",         "en": "Web3 & Blockchain" },
+        { "id": "ml-ai-engineering",       "ko": "ML·AI 엔지니어링",     "en": "ML & AI Engineering" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "korean-local-services",   "keywords": ["danggeun", "bunjang", "jobkorea", "kakao", "danawa", "kbl", "kleague", "kopis", "saramin"] },
+        { "subcategory": "web3-blockchain",         "keywords": ["nft", "smart contract", "web3", "solidity", "erc-721", "erc-1155", "blockchain"] },
+        { "subcategory": "finance-deal-ops",        "keywords": ["merger model", "deal screening", "due diligence", "kyc", "data room", "capital account", "nav pack", "gl recon"] },
+        { "subcategory": "ml-ai-engineering",        "keywords": ["fine-tuning", "pytorch", "tensorflow", "training data", "ml engineer", "data pipeline", "etl pipeline"] },
+        { "subcategory": "cloud-saas-integrations", "keywords": ["dropbox", "render.com", "firebase", "google cloud"] },
+        { "subcategory": "career-job-search",       "keywords": ["resume", "job posting", "job description", "linkedin profile", "career pivot", "job application"] }
+      ]
     }
   },
   "keyword_rules": [
@@ -362,6 +380,15 @@
     "zubair-trabzada/ai-trading-claude#skills/trade-report-pdf/SKILL.md": "stocks",
     "zubair-trabzada/ai-trading-claude#skills/trade-screen/SKILL.md": "stocks",
     "zubair-trabzada/ai-trading-claude#skills/trade-watchlist/SKILL.md": "stocks",
-    "zubair-trabzada/ai-trading-claude#trade/SKILL.md": "stocks"
+    "zubair-trabzada/ai-trading-claude#trade/SKILL.md": "stocks",
+    "davila7/claude-code-templates#cli-tool/components/skills/media/speech/SKILL.md": "productivity",
+    "jMerta/codex-skills#review-frontend-change/SKILL.md": "coding",
+    "daymade/claude-code-skills#daymade-docs/pdf-to-html/SKILL.md": "docs",
+    "openai/plugins#plugins/heygen/skills/heygen-avatar/SKILL.md": "design",
+    "wshobson/agents#plugins/security-scanning/skills/security-requirement-extraction/SKILL.md": "devops",
+    "JimLiu/baoyu-skills#skills/baoyu-youtube-transcript/SKILL.md": "productivity",
+    "composio-community/awesome-codex-skills#spreadsheet-formula-helper/SKILL.md": "data",
+    "davila7/claude-code-templates#cli-tool/components/skills/ai-research/rag-sentence-transformers/SKILL.md": "ai-agents",
+    "davila7/claude-code-templates#cli-tool/components/skills/ai-research/tokenization-sentencepiece/SKILL.md": "ai-agents"
   }
 }
