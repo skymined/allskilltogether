@@ -123,6 +123,15 @@
       "notes": "Interactive code knowledge-graph explorer distributed as ~9 bundled skills; Codex/Claude/Cursor compatible"
     },
     {
+      "repo": "nowork-studio/notfair-plugin",
+      "branch": "main",
+      "tool": "codex",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "includePrefix": "skills/",
+      "notes": "Open-source SEO, GEO, paid-media, analytics, and content workflows; the canonical skills/ mirror avoids duplicate host-specific copies elsewhere in the repo"
+    },
+    {
       "repo": "ComposioHQ/awesome-claude-skills",
       "branch": "master",
       "tool": "claude",
