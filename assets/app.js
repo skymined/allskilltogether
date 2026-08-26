@@ -167,11 +167,14 @@
       btn.className = "chip" + (state.activeCats.has(cat.id) ? " active" : "");
       btn.textContent = `${cat.icon} ${cat.en} (${count})`;
       btn.addEventListener("click", () => {
-        if (state.activeCats.has(cat.id)) state.activeCats.delete(cat.id);
-        else state.activeCats.add(cat.id);
-        // Subcategories only make sense scoped to exactly one active
-        // top-level category — clear them whenever that stops being true.
-        if (state.activeCats.size !== 1) state.activeSubcats.clear();
+        // Single-select, click-again-to-clear: picking a second category
+        // used to hide the subcategory row entirely (it only makes sense
+        // scoped to one parent), so category chips now behave like a
+        // radio group instead of independent toggles.
+        const wasActive = state.activeCats.has(cat.id);
+        state.activeCats.clear();
+        state.activeSubcats.clear();
+        if (!wasActive) state.activeCats.add(cat.id);
         renderChips();
         renderSubcategoryChips();
         renderBoard();
@@ -196,6 +199,10 @@
       return;
     }
     wrap.hidden = false;
+    const label = document.createElement("span");
+    label.className = "chip-row-sub-label";
+    label.textContent = "Narrow down ↳";
+    wrap.appendChild(label);
     for (const sub of subs) {
       const count = state.skills.filter((s) => s.category === catId && s.subcategory === sub.id).length;
       if (count === 0) continue;
