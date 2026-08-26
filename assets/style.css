@@ -227,6 +227,18 @@ button { font-family: inherit; }
 .chip:hover { border-color: var(--accent); color: var(--text); }
 .chip.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
+.chip-row-sub {
+  margin-top: 2px;
+  padding: 10px 0 2px 14px;
+  border-left: 2px solid var(--border);
+}
+.chip-sub {
+  padding: 5px 12px;
+  font-size: 12px;
+  background: var(--surface-2);
+}
+.chip-sub.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
 .result-count { color: var(--text-3); font-size: 13px; margin: 18px 2px 12px; font-weight: 600; }
 
 /* Board / cards --------------------------------------------------------- */

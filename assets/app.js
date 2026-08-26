@@ -4,9 +4,11 @@
   const state = {
     skills: [],
     categories: [],
+    subcategories: [],
     generatedAt: null,
     tool: "all",
     activeCats: new Set(),
+    activeSubcats: new Set(),
     query: "",
     sort: "updated",
     tray: new Set(),
@@ -36,6 +38,7 @@
     const data = await res.json();
     state.skills = data.skills || [];
     state.categories = data.categories || [];
+    state.subcategories = data.subcategories || [];
     state.generatedAt = data.generated_at || null;
   }
 
@@ -166,7 +169,43 @@
       btn.addEventListener("click", () => {
         if (state.activeCats.has(cat.id)) state.activeCats.delete(cat.id);
         else state.activeCats.add(cat.id);
+        // Subcategories only make sense scoped to exactly one active
+        // top-level category — clear them whenever that stops being true.
+        if (state.activeCats.size !== 1) state.activeSubcats.clear();
         renderChips();
+        renderSubcategoryChips();
+        renderBoard();
+      });
+      wrap.appendChild(btn);
+    }
+    renderSubcategoryChips();
+  }
+
+  function renderSubcategoryChips() {
+    const wrap = el("#subcategory-chips");
+    if (!wrap) return;
+    wrap.innerHTML = "";
+    if (state.activeCats.size !== 1) {
+      wrap.hidden = true;
+      return;
+    }
+    const [catId] = state.activeCats;
+    const subs = state.subcategories.filter((sc) => sc.parent === catId);
+    if (subs.length === 0) {
+      wrap.hidden = true;
+      return;
+    }
+    wrap.hidden = false;
+    for (const sub of subs) {
+      const count = state.skills.filter((s) => s.category === catId && s.subcategory === sub.id).length;
+      if (count === 0) continue;
+      const btn = document.createElement("button");
+      btn.className = "chip chip-sub" + (state.activeSubcats.has(sub.id) ? " active" : "");
+      btn.textContent = `${sub.en} (${count})`;
+      btn.addEventListener("click", () => {
+        if (state.activeSubcats.has(sub.id)) state.activeSubcats.delete(sub.id);
+        else state.activeSubcats.add(sub.id);
+        renderSubcategoryChips();
         renderBoard();
       });
       wrap.appendChild(btn);
@@ -179,6 +218,7 @@
     let list = state.skills.filter((s) => {
       if (state.tool !== "all" && s.tool !== state.tool) return false;
       if (state.activeCats.size > 0 && !state.activeCats.has(s.category)) return false;
+      if (state.activeSubcats.size > 0 && !state.activeSubcats.has(s.subcategory)) return false;
       if (q) {
         const hay = `${s.name} ${s.description} ${s.summary || ""} ${s.repo}`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -549,6 +589,8 @@
     const params = new URLSearchParams(location.search);
     const cat = params.get("category");
     if (cat) state.activeCats.add(cat);
+    const sub = params.get("subcategory");
+    if (sub && state.activeCats.size === 1) state.activeSubcats.add(sub);
     const q = params.get("q");
     if (q) {
       state.query = q;

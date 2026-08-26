@@ -23,6 +23,140 @@
     { "id": "stocks",        "ko": "주식·트레이딩",    "en": "Stocks & Trading",     "icon": "📈" },
     { "id": "other",         "ko": "기타",             "en": "Other",                "icon": "✨" }
   ],
+  "subcategories": {
+    "stocks": {
+      "list": [
+        { "id": "technical-analysis",  "ko": "기술적 분석",       "en": "Technical Analysis" },
+        { "id": "fundamental-research","ko": "펀더멘털·공시분석", "en": "Fundamental & Filings" },
+        { "id": "options-derivatives", "ko": "옵션·파생상품",     "en": "Options & Derivatives" },
+        { "id": "portfolio-risk",      "ko": "포트폴리오·리스크", "en": "Portfolio & Risk" },
+        { "id": "backtesting-screening","ko": "백테스트·스크리닝","en": "Backtesting & Screening" },
+        { "id": "market-data-broker",  "ko": "시세데이터·증권사연동", "en": "Market Data & Brokers" },
+        { "id": "korean-market",       "ko": "국내 주식시장",     "en": "Korean Market" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "korean-market",        "keywords": ["korean stock", "krx", "kospi", "kosdaq", "korea exchange", "toss securities", "daishin", "kanchi", "bank of korea"] },
+        { "subcategory": "options-derivatives",  "keywords": ["option", "pmcc", "covered call", "leaps", "greeks", "straddle", "collar strategy", "derivative"] },
+        { "subcategory": "backtesting-screening","keywords": ["backtest", "screener", "screen stocks", "strategy tester", "pair trad", "robot tester"] },
+        { "subcategory": "technical-analysis",   "keywords": ["technical analysis", "technical analyst", "chart pattern", "candlestick", "rsi", "macd", "bollinger", "moving average", "breakout", "support and resistance"] },
+        { "subcategory": "fundamental-research",  "keywords": ["fundamental analysis", "dcf", "valuation", "earnings", "10-k", "10-q", "sec filing", "sec edgar", "analyst estimate", "equity research", "bear case", "bull case", "comps analysis", "issuer brief"] },
+        { "subcategory": "portfolio-risk",       "keywords": ["portfolio", "position siz", "stop-loss", "stop loss", "risk metric", "drawdown", "hedge", "sharpe", "trailing stop"] },
+        { "subcategory": "market-data-broker",   "keywords": ["yfinance", "tradingview", "interactive brokers", "alpaca", "broker api", "market data api", "fintel"] }
+      ]
+    },
+    "writing": {
+      "list": [
+        { "id": "korean-writing",    "ko": "한국어 글쓰기",     "en": "Korean Writing" },
+        { "id": "ai-detection",      "ko": "AI 문체 탐지·교정", "en": "AI-Writing Detection" },
+        { "id": "documentation",     "ko": "문서·기술 글쓰기",  "en": "Documentation" },
+        { "id": "copywriting",       "ko": "카피라이팅",        "en": "Copywriting" },
+        { "id": "content-blogging",  "ko": "콘텐츠·블로그",     "en": "Content & Blogging" },
+        { "id": "editing-proofreading","ko": "교정·교열",       "en": "Editing & Proofreading" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "korean-writing",     "keywords": ["korean", "hwp", "ko-writer"] },
+        { "subcategory": "ai-detection",       "keywords": ["ai-sounding", "ai sounding", "detect ai", "humaniz", "de-translate", "translation-ese", "ai tell", "robotic text"] },
+        { "subcategory": "copywriting",        "keywords": ["marketing copy", "ad copy", "copywriting", "sales copy", "landing page copy", "ui copy"] },
+        { "subcategory": "documentation",      "keywords": ["technical writing", "api documentation", "readme", "changelog", "release notes", "scientific manuscript", "grant proposal", "docs sync"] },
+        { "subcategory": "content-blogging",   "keywords": ["blog post", "content strategy", "content calendar", "article", "video script", "content production"] },
+        { "subcategory": "editing-proofreading","keywords": ["proofread", "copy edit", "copy-editing", "grammar check", "spell check", "editing pass"] }
+      ]
+    },
+    "coding": {
+      "list": [
+        { "id": "testing-qa",        "ko": "테스트·QA",         "en": "Testing & QA" },
+        { "id": "code-review",       "ko": "코드 리뷰",         "en": "Code Review" },
+        { "id": "git-workflow",      "ko": "Git·버전관리",      "en": "Git & Version Control" },
+        { "id": "debugging",         "ko": "디버깅·트러블슈팅", "en": "Debugging" },
+        { "id": "docs-release",      "ko": "문서화·릴리스",     "en": "Docs & Release Notes" },
+        { "id": "dev-tooling",       "ko": "개발 도구·자동화",  "en": "Dev Tooling & Automation" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "testing-qa",     "keywords": ["test suite", "e2e test", "playwright", "unit test", "test coverage", "integration test"] },
+        { "subcategory": "code-review",    "keywords": ["code review", "pr review", "review diff", "review the code", "review backend", "review frontend"] },
+        { "subcategory": "git-workflow",   "keywords": ["git branch", "git commit", "pull request", "rebase", "merge conflict", "git history", "branch cleaner"] },
+        { "subcategory": "debugging",      "keywords": ["debug", "root cause", "bug fix", "troubleshoot", "diagnos", "reproduc"] },
+        { "subcategory": "docs-release",   "keywords": ["release notes", "changelog", "readme", "api documentation", "docs sync"] },
+        { "subcategory": "dev-tooling",    "keywords": ["cli tool", "automation script", "skill development", "agent skill", "mcp server", "plugin development", "marketplace"] }
+      ]
+    },
+    "business": {
+      "list": [
+        { "id": "fundraising",        "ko": "투자유치",           "en": "Fundraising" },
+        { "id": "financial-modeling", "ko": "재무모델링",         "en": "Financial Modeling" },
+        { "id": "accounting-tax",     "ko": "회계·세무",          "en": "Accounting & Tax" },
+        { "id": "pricing",            "ko": "가격전략",           "en": "Pricing Strategy" },
+        { "id": "executive-advisory", "ko": "경영진 자문",        "en": "Executive Advisory" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "fundraising",        "keywords": ["fundraising", "cap table", "term sheet", "pitch deck", "investor update", "board deck"] },
+        { "subcategory": "financial-modeling", "keywords": ["financial model", "unit economics", "runway", "burn rate", "revenue forecast"] },
+        { "subcategory": "accounting-tax",     "keywords": ["accounting", "invoice", "tax", "bookkeeping", "expense report"] },
+        { "subcategory": "pricing",            "keywords": ["pricing strategy", "pricing model", "packaging tier"] },
+        { "subcategory": "executive-advisory", "keywords": ["ceo advisor", "board prep", "executive strategy", "c-suite", "chief officer", "chief advisor"] }
+      ]
+    },
+    "design": {
+      "list": [
+        { "id": "ui-ux",           "ko": "UI·UX",           "en": "UI/UX" },
+        { "id": "visual-art",      "ko": "비주얼 아트",     "en": "Visual Art" },
+        { "id": "branding",        "ko": "브랜딩",          "en": "Branding" },
+        { "id": "web-frontend",    "ko": "웹·프론트엔드",   "en": "Web & Frontend" },
+        { "id": "presentation",    "ko": "프레젠테이션",    "en": "Presentation Design" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "presentation",   "keywords": ["slide deck", "presentation design", "deck design", "pitch deck design"] },
+        { "subcategory": "branding",       "keywords": ["brand guideline", "brand identity", "logo design"] },
+        { "subcategory": "visual-art",     "keywords": ["algorithmic art", "generative art", "illustration", "poster design"] },
+        { "subcategory": "web-frontend",   "keywords": ["landing page", "web design", "frontend design", "website design"] },
+        { "subcategory": "ui-ux",          "keywords": ["ui design", "ux research", "wireframe", "figma", "design system"] }
+      ]
+    },
+    "devops": {
+      "list": [
+        { "id": "ci-cd",              "ko": "CI/CD",              "en": "CI/CD" },
+        { "id": "containers",         "ko": "컨테이너·오케스트레이션", "en": "Containers & Orchestration" },
+        { "id": "cloud-infra",        "ko": "클라우드 인프라",    "en": "Cloud Infrastructure" },
+        { "id": "monitoring",         "ko": "모니터링·인시던트",  "en": "Monitoring & Incidents" },
+        { "id": "security-review",    "ko": "보안 점검",          "en": "Security Review" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "security-review", "keywords": ["security review", "threat model", "vulnerab", "penetration test"] },
+        { "subcategory": "monitoring",      "keywords": ["sentry", "datadog", "incident response", "on-call", "monitoring dashboard"] },
+        { "subcategory": "containers",      "keywords": ["docker", "kubernetes", "container"] },
+        { "subcategory": "cloud-infra",     "keywords": ["aws", "terraform", "infrastructure as code", "cloud hosting"] },
+        { "subcategory": "ci-cd",           "keywords": ["ci/cd", "github actions", "build pipeline", "deploy pipeline"] }
+      ]
+    },
+    "ai-agents": {
+      "list": [
+        { "id": "mcp-development",     "ko": "MCP 서버 개발",     "en": "MCP Development" },
+        { "id": "skill-plugin-dev",    "ko": "스킬·플러그인 개발", "en": "Skill & Plugin Dev" },
+        { "id": "prompt-engineering",  "ko": "프롬프트 엔지니어링", "en": "Prompt Engineering" },
+        { "id": "agent-orchestration", "ko": "에이전트 오케스트레이션", "en": "Agent Orchestration" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "mcp-development",     "keywords": ["mcp server", "mcp builder", "model context protocol"] },
+        { "subcategory": "skill-plugin-dev",    "keywords": ["skill development", "claude code plugin", "codex plugin", "skill-creator", "skill installer"] },
+        { "subcategory": "prompt-engineering",  "keywords": ["prompt engineering", "prompt template", "system prompt"] },
+        { "subcategory": "agent-orchestration", "keywords": ["orchestrat", "multi-agent", "subagent", "agent workflow"] }
+      ]
+    },
+    "data": {
+      "list": [
+        { "id": "data-visualization", "ko": "데이터 시각화",   "en": "Data Visualization" },
+        { "id": "spreadsheet",        "ko": "스프레드시트",    "en": "Spreadsheet Analysis" },
+        { "id": "sql-database",       "ko": "SQL·데이터베이스", "en": "SQL & Databases" },
+        { "id": "notebook-jupyter",   "ko": "노트북·Jupyter",  "en": "Notebooks" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "notebook-jupyter",   "keywords": ["jupyter", "notebook"] },
+        { "subcategory": "sql-database",       "keywords": ["sql query", "database schema", "postgres", "database migration"] },
+        { "subcategory": "spreadsheet",        "keywords": ["spreadsheet formula", "excel formula", "csv file"] },
+        { "subcategory": "data-visualization", "keywords": ["chart", "visualiz", "dashboard"] }
+      ]
+    }
+  },
   "keyword_rules": [
     { "category": "stocks",        "keywords": ["stock", "equity", "ticker", "yfinance", "trading", "technical analysis", "backtest", "candlestick", "10-k filing", "10-q filing", "sec filing", "sec edgar", "earnings call", "earnings estimate", "dcf", "portfolio management", "chart pattern", "nasdaq", "nyse", "krx", "kospi", "股票", "moving average", "rsi divergence", "macd", "options flow", "short volume", "insider trading", "analyst estimate"] },
     { "category": "science",       "keywords": ["chemistry", "biology", "molecul", "protein", "genom", "bioinformatic", "drug discovery", "clinical trial", "biotech", "crispr", "cell biology", "pharmacolog", "chemoinformatic", "biomedical", "proteomic", "cheminformatic"] },

@@ -179,6 +179,37 @@ function categorize(rules, overrides, key, name, description) {
   return best || "other";
 }
 
+// Finer-grained classification within one top-level category (e.g.
+// "stocks" -> "technical-analysis"). Returns null if the category has no
+// defined subcategories, or nothing scored a match.
+function subcategorize(subcategoryConfig, categoryId, overrides, key, name, description) {
+  const conf = subcategoryConfig[categoryId];
+  if (!conf) return null;
+  if (overrides[key]) return overrides[key];
+  const hay = `${name} ${description}`;
+  let best = null;
+  let bestScore = 0;
+  for (const rule of conf.keyword_rules) {
+    let score = 0;
+    for (const kw of rule.keywords) {
+      if (keywordRegex(kw).test(hay)) score++;
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      best = rule.subcategory;
+    }
+  }
+  return best;
+}
+
+function flattenSubcategories(subcategoryConfig) {
+  const out = [];
+  for (const [parent, conf] of Object.entries(subcategoryConfig || {})) {
+    for (const item of conf.list) out.push({ ...item, parent });
+  }
+  return out;
+}
+
 async function listTreeFiles(repo, branch) {
   const data = await gh(`/repos/${repo}/git/trees/${branch}?recursive=1`);
   if (data.truncated) {
@@ -211,7 +242,7 @@ async function repoMeta(repo) {
   }
 }
 
-async function processCollection(source, catRules, overrides) {
+async function processCollection(source, catRules, overrides, subcatConfig, subcatOverrides) {
   const {
     repo,
     branch = "main",
@@ -243,6 +274,7 @@ async function processCollection(source, catRules, overrides) {
       const description = fm.description || extractBodyFallbackDescription(raw);
       const key = `${repo}#${hit.path}`;
       const category = categorize(catRules, overrides, key, name, description);
+      const subcategory = subcategorize(subcatConfig, category, subcatOverrides, key, name, description);
       const updatedAt = (await lastCommitDate(repo, branch, hit.path)) || meta.pushedAt;
       return {
         id: slugify(`${tool}-${repo}-${hit.path}`),
@@ -250,6 +282,7 @@ async function processCollection(source, catRules, overrides) {
         description,
         tool,
         category,
+        subcategory,
         repo,
         path: hit.path,
         raw_url: `https://raw.githubusercontent.com/${repo}/${branch}/${hit.path}`,
@@ -266,7 +299,7 @@ async function processCollection(source, catRules, overrides) {
   return results.filter(Boolean);
 }
 
-async function processSingle(source, catRules, overrides) {
+async function processSingle(source, catRules, overrides, subcatConfig, subcatOverrides) {
   const { repo, branch = "main", tool, path: filePath, category: forcedCategory } = source;
   console.log(`Fetching single skill ${repo}/${filePath} ...`);
   try {
@@ -277,6 +310,7 @@ async function processSingle(source, catRules, overrides) {
     const meta = await repoMeta(repo);
     const key = `${repo}#${filePath}`;
     const category = forcedCategory || categorize(catRules, overrides, key, name, description);
+    const subcategory = subcategorize(subcatConfig, category, subcatOverrides, key, name, description);
     const updatedAt = (await lastCommitDate(repo, branch, filePath)) || meta.pushedAt;
     return [
       {
@@ -285,6 +319,7 @@ async function processSingle(source, catRules, overrides) {
         description,
         tool,
         category,
+        subcategory,
         repo,
         path: filePath,
         raw_url: `https://raw.githubusercontent.com/${repo}/${branch}/${filePath}`,
@@ -324,10 +359,16 @@ async function main() {
   const allResults = [];
   for (const source of sources.repos) {
     try {
+      const subcatConfig = categories.subcategories || {};
+      const subcatOverrides = categories.subcategory_overrides || {};
       if (source.type === "single") {
-        allResults.push(...(await processSingle(source, categories.keyword_rules, categories.overrides)));
+        allResults.push(
+          ...(await processSingle(source, categories.keyword_rules, categories.overrides, subcatConfig, subcatOverrides))
+        );
       } else {
-        allResults.push(...(await processCollection(source, categories.keyword_rules, categories.overrides)));
+        allResults.push(
+          ...(await processCollection(source, categories.keyword_rules, categories.overrides, subcatConfig, subcatOverrides))
+        );
       }
     } catch (e) {
       console.error(`Failed to process source ${source.repo}: ${e.message}`);
@@ -359,6 +400,7 @@ async function main() {
   const output = {
     generated_at: contentUnchanged && existing.generated_at ? existing.generated_at : generatedAt,
     categories: categories.list,
+    subcategories: flattenSubcategories(categories.subcategories),
     count: merged.length,
     skills: merged,
   };

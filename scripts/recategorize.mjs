@@ -34,6 +34,37 @@ function categorize(rules, overrides, key, name, description) {
   return best || "other";
 }
 
+// Finer-grained classification within one top-level category (e.g.
+// "stocks" -> "technical-analysis"). Returns null if the category has no
+// defined subcategories, or nothing scored a match.
+function subcategorize(subcategoryConfig, categoryId, overrides, key, name, description) {
+  const conf = subcategoryConfig[categoryId];
+  if (!conf) return null;
+  if (overrides[key]) return overrides[key];
+  const hay = `${name} ${description}`;
+  let best = null;
+  let bestScore = 0;
+  for (const rule of conf.keyword_rules) {
+    let score = 0;
+    for (const kw of rule.keywords) {
+      if (keywordRegex(kw).test(hay)) score++;
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      best = rule.subcategory;
+    }
+  }
+  return best;
+}
+
+function flattenSubcategories(subcategoryConfig) {
+  const out = [];
+  for (const [parent, conf] of Object.entries(subcategoryConfig || {})) {
+    for (const item of conf.list) out.push({ ...item, parent });
+  }
+  return out;
+}
+
 function heuristicSummary(description) {
   if (!description) return "";
   let s = description
@@ -64,9 +95,18 @@ async function main() {
     const next = categorize(categories.keyword_rules, categories.overrides, key, s.name, s.description);
     if (next !== s.category) changed++;
     s.category = next;
+    s.subcategory = subcategorize(
+      categories.subcategories || {},
+      next,
+      categories.subcategory_overrides || {},
+      key,
+      s.name,
+      s.description
+    );
     s.summary = summaries[s.id] || heuristicSummary(s.description);
   }
   data.categories = categories.list;
+  data.subcategories = flattenSubcategories(categories.subcategories);
 
   await writeFile(path.join(DATA_DIR, "skills.json"), JSON.stringify(data, null, 2) + "\n", "utf8");
   console.log(`Recategorized ${data.skills.length} skills, ${changed} category changes; summaries reapplied.`);
