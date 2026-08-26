@@ -155,6 +155,122 @@
         { "subcategory": "spreadsheet",        "keywords": ["spreadsheet formula", "excel formula", "csv file"] },
         { "subcategory": "data-visualization", "keywords": ["chart", "visualiz", "dashboard"] }
       ]
+    },
+    "productivity": {
+      "list": [
+        { "id": "automation-workflows", "ko": "자동화·워크플로우", "en": "Automation & Workflows" },
+        { "id": "note-taking",          "ko": "노트·지식관리",     "en": "Note-Taking & Knowledge" },
+        { "id": "scheduling",           "ko": "일정·리마인더",     "en": "Scheduling" },
+        { "id": "file-management",      "ko": "파일 관리",         "en": "File Management" },
+        { "id": "transcription-audio",  "ko": "음성·전사",         "en": "Transcription & Audio" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "transcription-audio",  "keywords": ["transcribe", "speech to text", "audio recording"] },
+        { "subcategory": "note-taking",          "keywords": ["note-taking", "notion", "obsidian", "knowledge management", "second brain"] },
+        { "subcategory": "scheduling",           "keywords": ["calendar", "schedule a", "reminder", "time blocking"] },
+        { "subcategory": "file-management",      "keywords": ["file organiz", "file management", "disk cleanup", "file cleanup"] },
+        { "subcategory": "automation-workflows", "keywords": ["automat", "workflow", "zapier", "task automation"] }
+      ]
+    },
+    "legal": {
+      "list": [
+        { "id": "privacy-compliance",  "ko": "개인정보보호",     "en": "Privacy & Data Protection" },
+        { "id": "medical-regulatory",  "ko": "의료기기 규제",    "en": "Medical & Regulatory" },
+        { "id": "security-compliance", "ko": "보안 컴플라이언스", "en": "Security Compliance" },
+        { "id": "contracts",           "ko": "계약·특허",        "en": "Contracts & IP" },
+        { "id": "ai-regulation",       "ko": "AI 규제",          "en": "AI Regulation" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "ai-regulation",       "keywords": ["eu ai act", "ai governance", "ai regulation"] },
+        { "subcategory": "medical-regulatory",  "keywords": ["fda", "iso 13485", "iso13485", "mdr 2017", "clinical trial", "medical device", "capa"] },
+        { "subcategory": "security-compliance", "keywords": ["soc 2", "soc2", "iso 27001", "hipaa"] },
+        { "subcategory": "privacy-compliance",  "keywords": ["gdpr", "dsgvo", "privacy law", "ccpa", "data protection"] },
+        { "subcategory": "contracts",           "keywords": ["contract review", "nda", "term sheet", "general counsel", "patent"] }
+      ]
+    },
+    "docs": {
+      "list": [
+        { "id": "pdf",            "ko": "PDF",       "en": "PDF" },
+        { "id": "word-documents", "ko": "워드 문서", "en": "Word Documents" },
+        { "id": "spreadsheets",   "ko": "스프레드시트", "en": "Spreadsheets" },
+        { "id": "presentations",  "ko": "프레젠테이션", "en": "Presentations" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "pdf",           "keywords": ["pdf"] },
+        { "subcategory": "word-documents","keywords": ["docx", "word document", "dotx"] },
+        { "subcategory": "spreadsheets",  "keywords": ["xlsx", "spreadsheet", "excel"] },
+        { "subcategory": "presentations", "keywords": ["pptx", "powerpoint", "slide deck", "potx"] }
+      ]
+    },
+    "science": {
+      "list": [
+        { "id": "biology-genomics",  "ko": "생물학·유전체",   "en": "Biology & Genomics" },
+        { "id": "chemistry",         "ko": "화학",             "en": "Chemistry" },
+        { "id": "clinical-medical",  "ko": "임상·의학",        "en": "Clinical & Medical" },
+        { "id": "astronomy-physics", "ko": "천문·물리",        "en": "Astronomy & Physics" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "astronomy-physics", "keywords": ["astro", "quantum", "physics", "fits file"] },
+        { "subcategory": "chemistry",         "keywords": ["chemistry", "chemoinformatic", "cheminformatic"] },
+        { "subcategory": "clinical-medical",  "keywords": ["clinical trial", "biomedical", "pharmacolog", "drug discovery", "clinical decision"] },
+        { "subcategory": "biology-genomics",  "keywords": ["biology", "genom", "protein", "bioinformatic", "cell biology", "crispr", "proteomic"] }
+      ]
+    },
+    "marketing": {
+      "list": [
+        { "id": "social-media",     "ko": "소셜미디어",     "en": "Social Media" },
+        { "id": "email-marketing",  "ko": "이메일 마케팅",  "en": "Email Marketing" },
+        { "id": "ad-campaigns",     "ko": "광고 캠페인",    "en": "Ad Campaigns" },
+        { "id": "brand-strategy",   "ko": "브랜드 전략",    "en": "Brand Strategy" },
+        { "id": "content-marketing","ko": "콘텐츠 마케팅",  "en": "Content Marketing" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "email-marketing",   "keywords": ["email marketing", "email campaign", "newsletter marketing"] },
+        { "subcategory": "social-media",      "keywords": ["social media", "instagram", "tiktok", "linkedin post"] },
+        { "subcategory": "ad-campaigns",      "keywords": ["ad copy", "advertis", "paid ads", "ad campaign"] },
+        { "subcategory": "brand-strategy",    "keywords": ["brand strategy", "brand positioning", "brand identity"] },
+        { "subcategory": "content-marketing", "keywords": ["content strategy", "content marketing", "content calendar"] }
+      ]
+    },
+    "sales": {
+      "list": [
+        { "id": "outreach",         "ko": "아웃리치",       "en": "Outreach" },
+        { "id": "crm-pipeline",     "ko": "CRM·파이프라인", "en": "CRM & Pipeline" },
+        { "id": "proposals-rfp",    "ko": "제안서·RFP",     "en": "Proposals & RFPs" },
+        { "id": "lead-generation",  "ko": "리드 생성",      "en": "Lead Generation" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "proposals-rfp",   "keywords": ["rfp", "rfi", "proposal writ"] },
+        { "subcategory": "crm-pipeline",    "keywords": ["crm", "sales pipeline", "deal stage"] },
+        { "subcategory": "lead-generation", "keywords": ["lead gen", "lead scoring", "lead qualif"] },
+        { "subcategory": "outreach",        "keywords": ["cold email", "outreach", "prospect"] }
+      ]
+    },
+    "research": {
+      "list": [
+        { "id": "market-research",   "ko": "시장조사",     "en": "Market Research" },
+        { "id": "academic-research", "ko": "학술 연구",    "en": "Academic Research" },
+        { "id": "data-gathering",    "ko": "데이터 수집",  "en": "Data Gathering" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "academic-research", "keywords": ["academic", "citation", "literature review", "peer-reviewed"] },
+        { "subcategory": "market-research",   "keywords": ["market sizing", "market research", "tam/sam/som", "competitive analysis"] },
+        { "subcategory": "data-gathering",    "keywords": ["web scraping", "data collection", "data gathering"] }
+      ]
+    },
+    "pm": {
+      "list": [
+        { "id": "agile-scrum",     "ko": "애자일·스크럼",   "en": "Agile & Scrum" },
+        { "id": "issue-tracking",  "ko": "이슈 트래킹",     "en": "Issue Tracking" },
+        { "id": "roadmapping",     "ko": "로드맵",          "en": "Roadmapping" },
+        { "id": "reporting",       "ko": "리포팅",          "en": "Reporting" }
+      ],
+      "keyword_rules": [
+        { "subcategory": "issue-tracking", "keywords": ["jira", "linear", "issue triage", "kanban"] },
+        { "subcategory": "agile-scrum",    "keywords": ["scrum", "sprint", "agile"] },
+        { "subcategory": "roadmapping",    "keywords": ["roadmap", "product discovery"] },
+        { "subcategory": "reporting",      "keywords": ["status report", "executive report", "progress report"] }
+      ]
     }
   },
   "keyword_rules": [

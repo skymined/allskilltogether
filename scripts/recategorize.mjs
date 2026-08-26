@@ -89,6 +89,8 @@ async function main() {
     // no curated summaries yet
   }
 
+  const before = JSON.stringify(data.skills);
+
   let changed = 0;
   for (const s of data.skills) {
     const key = `${s.repo}#${s.path}`;
@@ -107,6 +109,13 @@ async function main() {
   }
   data.categories = categories.list;
   data.subcategories = flattenSubcategories(categories.subcategories);
+
+  // Same freshness-timestamp rule as fetch-skills.mjs: only bump generated_at
+  // when something actually changed (category/subcategory/summary reshuffle
+  // counts as a real change — visitors browsing by category see it).
+  if (JSON.stringify(data.skills) !== before) {
+    data.generated_at = process.env.SKILLS_BUILD_TIME || new Date().toISOString();
+  }
 
   await writeFile(path.join(DATA_DIR, "skills.json"), JSON.stringify(data, null, 2) + "\n", "utf8");
   console.log(`Recategorized ${data.skills.length} skills, ${changed} category changes; summaries reapplied.`);
