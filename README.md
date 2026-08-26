@@ -23,8 +23,8 @@ If you find this useful, **a star helps other people find it** — this is a sma
 | Category | Skills | |
 | --- | ---: | --- |
 | 💻 Coding & Dev | 687 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=coding) |
-| ✨ Other | 573 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=other) |
-| 🎨 Design | 281 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
+| ✨ Other | 572 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=other) |
+| 🎨 Design | 280 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
 | ⚡ Productivity | 235 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=productivity) |
 | 🛠️ DevOps & Infra | 180 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops) |
 | 📈 Stocks & Trading | 177 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=stocks) |
@@ -32,9 +32,9 @@ If you find this useful, **a star helps other people find it** — this is a sma
 | 🤖 AI & Agent Dev | 148 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=ai-agents) |
 | 💼 Business & Finance | 125 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=business) |
 | ⚖️ Legal & Compliance | 110 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=legal) |
+| ✍️ Writing | 90 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing) |
 | 📄 Docs & Office | 89 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs) |
 | 🧬 Science & Research | 89 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science) |
-| ✍️ Writing | 88 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing) |
 | 📣 Marketing | 71 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=marketing) |
 | 🤝 Sales | 66 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=sales) |
 | 🔍 Research & Learning | 63 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=research) |
@@ -160,6 +160,18 @@ The biggest categories split into subcategories on the site (pick one category t
 </details>
 
 <details>
+<summary>✍️ Writing</summary>
+
+- Korean Writing (10) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=korean-writing)
+- AI-Writing Detection (7) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=ai-detection)
+- Documentation (5) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=documentation)
+- Content & Blogging (5) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=content-blogging)
+- Editing & Proofreading (2) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=editing-proofreading)
+- Copywriting (1) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=copywriting)
+
+</details>
+
+<details>
 <summary>📄 Docs & Office</summary>
 
 - PDF (31) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=pdf)
@@ -176,18 +188,6 @@ The biggest categories split into subcategories on the site (pick one category t
 - Clinical & Medical (10) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science&subcategory=clinical-medical)
 - Chemistry (7) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science&subcategory=chemistry)
 - Astronomy & Physics (1) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science&subcategory=astronomy-physics)
-
-</details>
-
-<details>
-<summary>✍️ Writing</summary>
-
-- Korean Writing (10) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=korean-writing)
-- AI-Writing Detection (7) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=ai-detection)
-- Documentation (5) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=documentation)
-- Content & Blogging (5) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=content-blogging)
-- Editing & Proofreading (2) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=editing-proofreading)
-- Copywriting (1) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing&subcategory=copywriting)
 
 </details>
 
