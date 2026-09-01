@@ -12,7 +12,7 @@
 ![Screenshot of All Skill Together](docs/screenshot.png)
 
 <!-- STATS:START -->
-**3,241 skills** (2,566 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-08-31.
+**3,241 skills** (2,566 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-09-01.
 <!-- STATS:END -->
 
 If you find this useful, **a star helps other people find it** — this is a small side project, not a company, so word of mouth (and the GitHub star graph) is basically the whole distribution strategy.
@@ -24,10 +24,10 @@ If you find this useful, **a star helps other people find it** — this is a sma
 | --- | ---: | --- |
 | 💻 Coding & Dev | 686 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=coding) |
 | ✨ Other | 548 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=other) |
-| 🎨 Design | 293 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
+| 🎨 Design | 294 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
 | ⚡ Productivity | 219 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=productivity) |
 | 📈 Stocks & Trading | 192 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=stocks) |
-| 🛠️ DevOps & Infra | 166 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops) |
+| 🛠️ DevOps & Infra | 165 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops) |
 | 📊 Data & Analytics | 157 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=data) |
 | 🤖 AI & Agent Dev | 136 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=ai-agents) |
 | 💼 Business & Finance | 129 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=business) |
@@ -112,7 +112,7 @@ The biggest categories split into subcategories on the site (pick one category t
 
 - Security Review (33) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=security-review)
 - CI/CD (21) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=ci-cd)
-- Containers & Orchestration (21) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=containers)
+- Containers & Orchestration (20) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=containers)
 - Cloud Infrastructure (15) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=cloud-infra)
 - Monitoring & Incidents (5) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=devops&subcategory=monitoring)
 
