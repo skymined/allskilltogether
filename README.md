@@ -12,7 +12,7 @@
 ![Screenshot of All Skill Together](docs/screenshot.png)
 
 <!-- STATS:START -->
-**3,241 skills** (2,566 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-09-01.
+**3,244 skills** (2,569 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-09-02.
 <!-- STATS:END -->
 
 If you find this useful, **a star helps other people find it** — this is a small side project, not a company, so word of mouth (and the GitHub star graph) is basically the whole distribution strategy.
@@ -22,7 +22,7 @@ If you find this useful, **a star helps other people find it** — this is a sma
 <!-- CATEGORY_TABLE:START -->
 | Category | Skills | |
 | --- | ---: | --- |
-| 💻 Coding & Dev | 686 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=coding) |
+| 💻 Coding & Dev | 688 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=coding) |
 | ✨ Other | 548 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=other) |
 | 🎨 Design | 294 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=design) |
 | ⚡ Productivity | 219 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=productivity) |
@@ -42,7 +42,7 @@ If you find this useful, **a star helps other people find it** — this is a sma
 | 🔎 SEO | 39 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=seo) |
 | 💬 Communication | 21 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=communication) |
 | 🎓 Education | 20 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=education) |
-| 🌐 Translation | 14 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=translation) |
+| 🌐 Translation | 15 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=translation) |
 | 🎧 Customer Support | 11 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=support) |
 <!-- CATEGORY_TABLE:END -->
 
