@@ -333,6 +333,15 @@
       "path": "SKILL.md",
       "category": "stocks",
       "notes": "Single-skill repo: US/HK stock data toolkit (CBOE options, FINRA short volume, SEC EDGAR)"
+    },
+    {
+      "repo": "vostride/agent-qa",
+      "branch": "main",
+      "tool": "codex",
+      "type": "collection",
+      "match": ["SKILL.md"],
+      "includePrefix": "skills/",
+      "notes": "Three source-available FSL-1.1-ALv2 QA skills for authoring natural-language web/mobile regression tests, debugging failed runs, and evidence-backed result triage. packages/cli/skills/ mirrors the canonical skills/ subtree and is excluded to avoid duplicates."
     }
   ]
 }
