@@ -12,7 +12,7 @@
 ![Screenshot of All Skill Together](docs/screenshot.png)
 
 <!-- STATS:START -->
-**3,244 skills** (2,569 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-09-04.
+**3,245 skills** (2,570 Claude · 675 Codex) from **40 source repos**, rescanned automatically every day. Last synced: 2026-09-05.
 <!-- STATS:END -->
 
 If you find this useful, **a star helps other people find it** — this is a small side project, not a company, so word of mouth (and the GitHub star graph) is basically the whole distribution strategy.
@@ -33,7 +33,7 @@ If you find this useful, **a star helps other people find it** — this is a sma
 | 💼 Business & Finance | 129 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=business) |
 | ⚖️ Legal & Compliance | 109 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=legal) |
 | 🧬 Science & Research | 89 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=science) |
-| 📄 Docs & Office | 83 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs) |
+| 📄 Docs & Office | 84 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs) |
 | ✍️ Writing | 82 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=writing) |
 | 📣 Marketing | 71 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=marketing) |
 | 🔍 Research & Learning | 63 | [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=research) |
@@ -173,7 +173,7 @@ The biggest categories split into subcategories on the site (pick one category t
 <summary>📄 Docs & Office</summary>
 
 - PDF (31) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=pdf)
-- Presentations (20) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=presentations)
+- Presentations (21) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=presentations)
 - Spreadsheets (19) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=spreadsheets)
 - Word Documents (13) → [Browse →](https://skymined.github.io/awesome-claude-codex-skills/?category=docs&subcategory=word-documents)
 
